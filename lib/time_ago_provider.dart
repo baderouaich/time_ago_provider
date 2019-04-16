@@ -1,7 +1,6 @@
 library time_ago_provider;
 
-class TimeAgo
-{
+class TimeAgo {
   static const int SECOND_MILLIS = 1000;
   static const int MINUTE_MILLIS = 60 * SECOND_MILLIS;
   static const int HOUR_MILLIS = 60 * MINUTE_MILLIS;
@@ -9,23 +8,17 @@ class TimeAgo
   static const int MONTH_MILLIS = 30 * DAY_MILLIS;
   static const int YEAR_MILLIS = 12 * MONTH_MILLIS;
 
-  static String getTimeAgo({int timeStamp, Language language})
-  {
-    if(timeStamp != null)
-    {
-      language = language?? Language.ENGLISH; //default
+  static String getTimeAgo({int timeStamp, Language language}) {
+    if (timeStamp != null) {
+      language = language ?? Language.ENGLISH;
 
-      if (timeStamp < 1000000000000)
-      {
+      if (timeStamp < 1000000000000) {
         timeStamp *= 1000;
       }
 
       int now = DateTime.now().millisecondsSinceEpoch;
-      if (timeStamp > now || timeStamp <= 0)
-      {
-
-        switch(language)
-        {
+      if (timeStamp > now || timeStamp <= 0) {
+        switch (language) {
           case Language.ENGLISH:
             return "just now";
           case Language.ARABIC:
@@ -48,15 +41,12 @@ class TimeAgo
             return "à présent";
           default:
             return "";
-
         }
       }
 
       final int difference = now - timeStamp;
-      if (difference < MINUTE_MILLIS)
-      {
-        switch(language)
-        {
+      if (difference < MINUTE_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "just now";
           case Language.ARABIC:
@@ -79,32 +69,9 @@ class TimeAgo
             return "à présent";
           default:
             return "";
-        /*case Language.ENGLISH:
-          return "seconds ago";
-        case Language.ARABIC:
-          return "منذ ثوانى";
-        case Language.GERMAN:
-          return "Sekunden zuvor";
-        case Language.SPANISH:
-          return "hace segundos";
-        case Language.CHINESE:
-          return "几秒钟前";
-        case Language.RUSSIAN:
-          return "секунд назад";
-        case Language.PORTUGUESE:
-          return "segundos atrás";
-        case Language.JAPANESE:
-          return "数秒前";
-        case Language.HINDI:
-          return "एक सेकंड पहले";
-        case Language.FRENCH:
-          return "quelques instants";*/
         }
-      }
-      else if (difference < 2 * MINUTE_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 2 * MINUTE_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "a minute ago";
           case Language.ARABIC:
@@ -127,13 +94,9 @@ class TimeAgo
             return "Il y'a une minute";
           default:
             return "";
-
         }
-      }
-      else if (difference < 50 * MINUTE_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 50 * MINUTE_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} minutes ago";
           case Language.ARABIC:
@@ -156,13 +119,9 @@ class TimeAgo
             return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} dernières minutes";
           default:
             return "";
-
         }
-      }
-      else if (difference < 90 * MINUTE_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 90 * MINUTE_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "an hour ago";
           case Language.ARABIC:
@@ -185,13 +144,9 @@ class TimeAgo
             return "il y a une heure";
           default:
             return "";
-
         }
-      }
-      else if (difference < 24 * HOUR_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 24 * HOUR_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "${(difference / HOUR_MILLIS).toString().split(".")[0]} hours ago";
           case Language.ARABIC:
@@ -214,13 +169,9 @@ class TimeAgo
             return "${(difference / HOUR_MILLIS).toString().split(".")[0]} heures passées";
           default:
             return "";
-
         }
-      }
-      else if (difference < 48 * HOUR_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 48 * HOUR_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "yesterday";
           case Language.ARABIC:
@@ -243,13 +194,9 @@ class TimeAgo
             return "hier";
           default:
             return "";
-
         }
-      }
-      else if(difference < 30 * DAY_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 30 * DAY_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
             return "${(difference / DAY_MILLIS).toString().split(".")[0]} days ago";
           case Language.ARABIC:
@@ -272,80 +219,106 @@ class TimeAgo
             return "${(difference / DAY_MILLIS).toString().split(".")[0]} jours passés";
           default:
             return "";
-
         }
-      }
-      else if(difference < 12 * MONTH_MILLIS)
-      {
-        switch(language)
-        {
+      } else if (difference < 12 * MONTH_MILLIS) {
+        switch (language) {
           case Language.ENGLISH:
-            return (difference / MONTH_MILLIS < 2) ? "a month ago" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} months ago";
+            return (difference / MONTH_MILLIS < 2)
+                ? "a month ago"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} months ago";
           case Language.ARABIC:
-            return (difference / MONTH_MILLIS < 2) ? "قبل شهر" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} أشهر مضت ";
+            return (difference / MONTH_MILLIS < 2)
+                ? "قبل شهر"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} أشهر مضت ";
           case Language.GERMAN:
-            return (difference / MONTH_MILLIS < 2) ? "vor einem Monat" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} vor wenigen Monaten";
+            return (difference / MONTH_MILLIS < 2)
+                ? "vor einem Monat"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} vor wenigen Monaten";
           case Language.SPANISH:
-            return (difference / MONTH_MILLIS < 2) ? "hace un mes" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} Hace meses";
+            return (difference / MONTH_MILLIS < 2)
+                ? "hace un mes"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} Hace meses";
           case Language.CHINESE:
-            return (difference / MONTH_MILLIS < 2) ? "一个月前" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 几个月前";
+            return (difference / MONTH_MILLIS < 2)
+                ? "一个月前"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 几个月前";
           case Language.RUSSIAN:
-            return (difference / MONTH_MILLIS < 2) ? "месяц назад" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} прошедшие месяцы";
+            return (difference / MONTH_MILLIS < 2)
+                ? "месяц назад"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} прошедшие месяцы";
           case Language.PORTUGUESE:
-            return (difference / MONTH_MILLIS < 2) ? "um mês atrás" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} meses antes";
+            return (difference / MONTH_MILLIS < 2)
+                ? "um mês atrás"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} meses antes";
           case Language.JAPANESE:
-            return (difference / MONTH_MILLIS < 2) ? "一ヶ月前" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 数か月前";
+            return (difference / MONTH_MILLIS < 2)
+                ? "一ヶ月前"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 数か月前";
           case Language.HINDI:
-            return (difference / MONTH_MILLIS < 2) ? "एक महीने पहले" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} महिनो पहले";
+            return (difference / MONTH_MILLIS < 2)
+                ? "एक महीने पहले"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} महिनो पहले";
           case Language.FRENCH:
-            return (difference / MONTH_MILLIS < 2) ? "il y a un mois" : "${(difference / MONTH_MILLIS).toString().split(".")[0]} derniers mois";
-          default:
-            return "";
-
-        }
-      }
-      else
-      {
-
-        switch(language)
-        {
-          case Language.ENGLISH:
-            return (difference / YEAR_MILLIS < 2) ? "a year ago" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} years ago";
-          case Language.ARABIC:
-            return (difference / YEAR_MILLIS < 2) ? "قبل عام" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} سنين مضت ";
-          case Language.GERMAN:
-            return (difference / YEAR_MILLIS < 2) ? "vor einem Jahr" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} vor Jahren";
-          case Language.SPANISH:
-            return (difference / YEAR_MILLIS < 2) ? "Hace un año" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} hace años que";
-          case Language.CHINESE:
-            return (difference / YEAR_MILLIS < 2) ? "一年前" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 几年前";
-          case Language.RUSSIAN:
-            return (difference / YEAR_MILLIS < 2) ? "год назад" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} прошедшие годы";
-          case Language.PORTUGUESE:
-            return (difference / YEAR_MILLIS < 2) ? "um ano atrás" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} anos atrás";
-          case Language.JAPANESE:
-            return (difference / YEAR_MILLIS < 2) ? "一年前" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 数年前";
-          case Language.HINDI:
-            return (difference / YEAR_MILLIS < 2) ? "एक साल पहले" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} बहुत साल पहले";
-          case Language.FRENCH:
-            return (difference / YEAR_MILLIS < 2) ? "il y a un an" : "${(difference / YEAR_MILLIS).toString().split(".")[0]} dernières années";
+            return (difference / MONTH_MILLIS < 2)
+                ? "il y a un mois"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} derniers mois";
           default:
             return "";
         }
-
+      } else {
+        switch (language) {
+          case Language.ENGLISH:
+            return (difference / YEAR_MILLIS < 2)
+                ? "a year ago"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} years ago";
+          case Language.ARABIC:
+            return (difference / YEAR_MILLIS < 2)
+                ? "قبل عام"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} سنين مضت ";
+          case Language.GERMAN:
+            return (difference / YEAR_MILLIS < 2)
+                ? "vor einem Jahr"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} vor Jahren";
+          case Language.SPANISH:
+            return (difference / YEAR_MILLIS < 2)
+                ? "Hace un año"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} hace años que";
+          case Language.CHINESE:
+            return (difference / YEAR_MILLIS < 2)
+                ? "一年前"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 几年前";
+          case Language.RUSSIAN:
+            return (difference / YEAR_MILLIS < 2)
+                ? "год назад"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} прошедшие годы";
+          case Language.PORTUGUESE:
+            return (difference / YEAR_MILLIS < 2)
+                ? "um ano atrás"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} anos atrás";
+          case Language.JAPANESE:
+            return (difference / YEAR_MILLIS < 2)
+                ? "一年前"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 数年前";
+          case Language.HINDI:
+            return (difference / YEAR_MILLIS < 2)
+                ? "एक साल पहले"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} बहुत साल पहले";
+          case Language.FRENCH:
+            return (difference / YEAR_MILLIS < 2)
+                ? "il y a un an"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} dernières années";
+          default:
+            return "";
+        }
       }
+    } else {
+      throw Exception(
+          "Parameter timeStamp must not be null ====> .getTimeAgo(timeStamp: YOUR_TIME_STAMP)");
     }
-    else
-    {
-      throw Exception("Parameter timeStamp must not be null ====> .getTimeAgo(timeStamp: YOUR_TIME_STAMP)");
-    }
-
-
   }
-
 }
-enum Language
-{
+
+enum Language {
   ENGLISH,
   ARABIC,
   GERMAN,

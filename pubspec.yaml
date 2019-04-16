@@ -1,7 +1,7 @@
 name: time_ago_provider
 description: A Library that takes a time stamp value and returns an interval String of the time that passed between the given time stamp to the present (Now). (e.g. "7 minutes ago" ).
-version: 0.0.1
-homepage: https://pub.dartlang.org/packages/time_ago
+version: 0.1.0
+homepage: https://github.com/BaderEddineOuaich/time_ago_provider
 author: Bader Eddine Ouaich <badereddineouaich@gmail.com>
 
 environment:

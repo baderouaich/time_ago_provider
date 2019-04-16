@@ -12,13 +12,13 @@ void main()
 {
   //Normal Usage
   int myTimeStamp = DateTime.now().millisecondsSinceEpoch; // Get the current time stamp
-  print(TimeAgo.getTimeAgo(timeStamp: myTimeStamp));
-  //Output e.g: 7 minutes ago
+  String timeAgo = TimeAgo.getTimeAgo(timeStamp: myTimeStamp); //getTimeAgo(int timeStamp) returns a String " X minutes/hours/days/months/years ago ..."
+  print("Posted $timeAgo");
 
-  //With Language [Default Language = ENGLISH]
+  //With Language
   int mySecondTimeStamp = DateTime.now().millisecondsSinceEpoch;
-  print(TimeAgo.getTimeAgo(timeStamp: mySecondTimeStamp, language: Language.GERMAN));
-  //Output e.g: 7 minuten her
+  String germanTimeAgo = TimeAgo.getTimeAgo(timeStamp: mySecondTimeStamp, language: Language.GERMAN); //Default Language ENGLISH
+  print("Gepostet $germanTimeAgo");
 }
 ```
 
@@ -33,7 +33,7 @@ void main()
 - [x] PORTUGUESE
 - [x] JAPANESE
 - [x] HINDI
-- [x] FRENCH.
+- [x] FRENCH
 
 
 ## Features and bugs
