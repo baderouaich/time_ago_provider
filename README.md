@@ -44,6 +44,9 @@ void main()
 - [x] FRENCH
 
 
+## Installing
+[Package](https://pub.dartlang.org/packages/time_ago_provider)
+
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
