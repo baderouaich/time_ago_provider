@@ -22,6 +22,14 @@ void main()
 }
 ```
 
+
+## Methods
+
+|Function|Parameter|Description|Return|
+|--|--|--|--|
+|getTimeAgo|`int timeStamp`|Returns an interval String of the time that passed between the given time stamp to the present (Now)|`String` timeAgo|
+
+
 ## Supported Languages
 
 - [x] ENGLISH
