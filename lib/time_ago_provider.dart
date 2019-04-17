@@ -35,8 +35,10 @@ class TimeAgo {
             return "agora";
           case Language.JAPANESE:
             return "ちょうど今";
+          case Language.NEPALI:
+            return "भर्खरै";
           case Language.HINDI:
-            return "अभी";
+            return "अभी अभी";
           case Language.FRENCH:
             return "à présent";
           default:
@@ -63,6 +65,8 @@ class TimeAgo {
             return "agora";
           case Language.JAPANESE:
             return "ちょうど今";
+          case Language.NEPALI:
+            return "भर्खरै";
           case Language.HINDI:
             return "अभी";
           case Language.FRENCH:
@@ -88,6 +92,8 @@ class TimeAgo {
             return "um minuto atrás";
           case Language.JAPANESE:
             return "分前";
+          case Language.NEPALI:
+            return "एक मिनेट पहिले";
           case Language.HINDI:
             return "एक मिनट पहले";
           case Language.FRENCH:
@@ -113,8 +119,10 @@ class TimeAgo {
             return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} minutos atrás";
           case Language.JAPANESE:
             return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} 数分前";
+          case Language.NEPALI:
+            return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} मिनेट पहिले";
           case Language.HINDI:
-            return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} कुछ देर पहले";
+            return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} मिनट पहले";
           case Language.FRENCH:
             return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} dernières minutes";
           default:
@@ -138,6 +146,8 @@ class TimeAgo {
             return "uma hora atrás";
           case Language.JAPANESE:
             return "一時間前";
+          case Language.NEPALI:
+            return "एक घण्टा पहिले";
           case Language.HINDI:
             return "एक घंटा पहले";
           case Language.FRENCH:
@@ -163,6 +173,8 @@ class TimeAgo {
             return "${(difference / HOUR_MILLIS).toString().split(".")[0]} Horas atrás";
           case Language.JAPANESE:
             return "${(difference / HOUR_MILLIS).toString().split(".")[0]} 時間前";
+          case Language.NEPALI:
+            return "${(difference / HOUR_MILLIS).toString().split(".")[0]} घण्टा पहिले";
           case Language.HINDI:
             return "${(difference / HOUR_MILLIS).toString().split(".")[0]} घंटो पहले";
           case Language.FRENCH:
@@ -188,8 +200,10 @@ class TimeAgo {
             return "ontem";
           case Language.JAPANESE:
             return "昨日";
+          case Language.NEPALI:
+            return "हिजो";
           case Language.HINDI:
-            return "बिता कल";
+            return "कल";
           case Language.FRENCH:
             return "hier";
           default:
@@ -213,6 +227,8 @@ class TimeAgo {
             return "${(difference / DAY_MILLIS).toString().split(".")[0]} dias atrás";
           case Language.JAPANESE:
             return "${(difference / DAY_MILLIS).toString().split(".")[0]} 数日前";
+          case Language.NEPALI:
+            return "${(difference / DAY_MILLIS).toString().split(".")[0]} दिन पहिले";
           case Language.HINDI:
             return "${(difference / DAY_MILLIS).toString().split(".")[0]} दिन पहले";
           case Language.FRENCH:
@@ -254,6 +270,10 @@ class TimeAgo {
             return (difference / MONTH_MILLIS < 2)
                 ? "一ヶ月前"
                 : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 数か月前";
+          case Language.NEPALI:
+            return (difference / MONTH_MILLIS < 2)
+                ? "एक महिना पहिले"
+                : "${(difference / MONTH_MILLIS).toString().split(".")[0]} महिना पहिले";
           case Language.HINDI:
             return (difference / MONTH_MILLIS < 2)
                 ? "एक महीने पहले"
@@ -299,10 +319,14 @@ class TimeAgo {
             return (difference / YEAR_MILLIS < 2)
                 ? "一年前"
                 : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 数年前";
+          case Language.NEPALI:
+            return (difference / YEAR_MILLIS < 2)
+                ? "एक वर्ष पहिले"
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} वर्ष पहिले";
           case Language.HINDI:
             return (difference / YEAR_MILLIS < 2)
                 ? "एक साल पहले"
-                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} बहुत साल पहले";
+                : "${(difference / YEAR_MILLIS).toString().split(".")[0]} साल पहले";
           case Language.FRENCH:
             return (difference / YEAR_MILLIS < 2)
                 ? "il y a un an"
@@ -327,6 +351,7 @@ enum Language {
   RUSSIAN,
   PORTUGUESE,
   JAPANESE,
+  NEPALI,
   HINDI,
   FRENCH,
 }

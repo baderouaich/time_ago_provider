@@ -32,9 +32,13 @@ void main()
 - [x] RUSSIAN
 - [x] PORTUGUESE
 - [x] JAPANESE
+- [x] NEPALI
 - [x] HINDI
 - [x] FRENCH
 
+
+## Translation Credit
+- **Nepali** translation by [Sarbagya Dhaubanjar](https://github.com/sarbagyastha/)
 
 ## Features and bugs
 
