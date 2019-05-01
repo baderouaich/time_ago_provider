@@ -9,3 +9,7 @@
 ## 0.1.1
 
 - Code improved.
+
+## 1.0.0
+
+- Method's Parameter (timeStamp) is now required.
