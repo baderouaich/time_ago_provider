@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/time_ago_provider_example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/time_ago_provider_example.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,7 +19,17 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="458">
+              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,11 +40,11 @@
         <option value="$PROJECT_DIR$/../time_ago/pubspec.yaml" />
         <option value="$PROJECT_DIR$/LICENSE" />
         <option value="$PROJECT_DIR$/test/time_ago_provider_test.dart" />
+        <option value="$PROJECT_DIR$/example/time_ago_provider_example.dart" />
+        <option value="$PROJECT_DIR$/lib/time_ago_provider.dart" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/CHANGELOG.md" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/example/time_ago_provider_example.dart" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/lib/time_ago_provider.dart" />
       </list>
     </option>
   </component>
@@ -152,7 +161,21 @@
       <option name="project" value="LOCAL" />
       <updated>1555520291499</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Example Edited.">
+      <created>1556818849274</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556818849274</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Example Edited 1.">
+      <created>1556819173368</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1556819173368</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -189,8 +212,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26528117" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26528117" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -205,7 +229,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Dart Analysis" order="7" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info anchor="bottom" id="Flutter Performance" order="11" side_tool="true" />
@@ -228,7 +252,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Code structure improved." />
     <MESSAGE value=" Method's Parameter (timeStamp) is now required." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Method's Parameter (timeStamp) is now required." />
+    <MESSAGE value="Example Edited." />
+    <MESSAGE value="Example Edited 1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Example Edited 1." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../time_ago/pubspec.yaml" />
@@ -272,20 +298,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/time_ago_provider_test.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -300,6 +312,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="14" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CHANGELOG.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
         </state>
       </provider>
     </entry>
