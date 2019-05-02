@@ -48,6 +48,6 @@ void main()
 [Package](https://pub.dartlang.org/packages/time_ago_provider)
 
 ## Features and bugs
-If you face any problems feel free to open an issue at the issue tracker. If you feel the library is missing a feature, please raise a ticket on Github. Pull request are also welcome.
+If you face any problems feel free to open an issue at the [issue tracker][tracker]. If you feel the library is missing a feature, please raise a ticket on Github. Pull request are also welcome.
 [tracker]: https://github.com/BaderEddineOuaich/time_ago_provider/issues
 

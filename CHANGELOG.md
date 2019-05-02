@@ -17,3 +17,7 @@
 ## 1.0.1
 
 - Example Edited.
+
+## 1.0.2
+
+- README.md Edited.
