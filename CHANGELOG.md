@@ -13,3 +13,7 @@
 ## 1.0.0
 
 - Method's Parameter (timeStamp) is now required.
+
+## 1.0.1
+
+- Example Edited.
