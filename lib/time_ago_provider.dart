@@ -22,6 +22,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "just now";
+        case Language.PERSIAN:
+          return "همین حالا";
         case Language.ARABIC:
           return "الآن";
         case Language.GERMAN:
@@ -50,6 +52,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "just now";
+        case Language.PERSIAN:
+          return "همین حالا";
         case Language.ARABIC:
           return "الآن";
         case Language.GERMAN:
@@ -75,6 +79,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "a minute ago";
+        case Language.PERSIAN:
+          return "یک دقیقه پیش";
         case Language.ARABIC:
           return "منذ دقيقة";
         case Language.GERMAN:
@@ -100,6 +106,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} minutes ago";
+        case Language.PERSIAN:
+          return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} دقیقه پیش";
         case Language.ARABIC:
           return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} دقائق مضت ";
         case Language.GERMAN:
@@ -125,6 +133,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "an hour ago";
+        case Language.PERSIAN:
+          return "یک ساعت پیش";
         case Language.ARABIC:
           return "منذ ساعة";
         case Language.GERMAN:
@@ -150,6 +160,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "${(difference / HOUR_MILLIS).toString().split(".")[0]} hours ago";
+        case Language.PERSIAN:
+          return "${(difference / HOUR_MILLIS).toString().split(".")[0]} ساعت پیش";
         case Language.ARABIC:
           return "${(difference / HOUR_MILLIS).toString().split(".")[0]} ساعات مضت ";
         case Language.GERMAN:
@@ -175,6 +187,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "yesterday";
+        case Language.PERSIAN:
+          return "دیروز";
         case Language.ARABIC:
           return "في الامس";
         case Language.GERMAN:
@@ -200,6 +214,8 @@ class TimeAgo {
       switch (language) {
         case Language.ENGLISH:
           return "${(difference / DAY_MILLIS).toString().split(".")[0]} days ago";
+        case Language.PERSIAN:
+          return "${(difference / DAY_MILLIS).toString().split(".")[0]} روز قبل";
         case Language.ARABIC:
           return "${(difference / DAY_MILLIS).toString().split(".")[0]} أيام مضت ";
         case Language.GERMAN:
@@ -227,6 +243,10 @@ class TimeAgo {
           return (difference / MONTH_MILLIS < 2)
               ? "a month ago"
               : "${(difference / MONTH_MILLIS).toString().split(".")[0]} months ago";
+        case Language.PERSIAN:
+          return (difference / MONTH_MILLIS < 2)
+              ? "یک ماه پیش"
+              : "${(difference / MONTH_MILLIS).toString().split(".")[0]} ماه قبل";
         case Language.ARABIC:
           return (difference / MONTH_MILLIS < 2)
               ? "قبل شهر"
@@ -272,6 +292,10 @@ class TimeAgo {
           return (difference / YEAR_MILLIS < 2)
               ? "a year ago"
               : "${(difference / YEAR_MILLIS).toString().split(".")[0]} years ago";
+        case Language.PERSIAN:
+          return (difference / YEAR_MILLIS < 2)
+              ? "یک سال پیش"
+              : "${(difference / YEAR_MILLIS).toString().split(".")[0]} سال پیش";
         case Language.ARABIC:
           return (difference / YEAR_MILLIS < 2)
               ? "قبل عام"
@@ -318,6 +342,7 @@ class TimeAgo {
 /// Supported Languages (Locals)
 enum Language {
   ENGLISH,
+  PERSIAN,
   ARABIC,
   GERMAN,
   SPANISH,
