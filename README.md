@@ -33,6 +33,7 @@ void main()
 
 ## Supported Languages
 - [x] ENGLISH
+- [x] PERSIAN
 - [x] ARABIC
 - [x] GERMAN
 - [x] SPANISH
