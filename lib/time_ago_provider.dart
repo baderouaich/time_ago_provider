@@ -42,6 +42,8 @@ class TimeAgo {
           return "अभी";
         case Language.FRENCH:
           return "à présent";
+        case Language.KOREAN:
+          return "지금";
         default:
           return "";
       }
@@ -72,6 +74,8 @@ class TimeAgo {
           return "अभी";
         case Language.FRENCH:
           return "à présent";
+        case Language.KOREAN:
+          return "지금";
         default:
           return "";
       }
@@ -99,6 +103,8 @@ class TimeAgo {
           return "एक मिनट पहले";
         case Language.FRENCH:
           return "Il y'a une minute";
+        case Language.KOREAN:
+          return "1분 전";
         default:
           return "";
       }
@@ -126,6 +132,8 @@ class TimeAgo {
           return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} कुछ देर पहले";
         case Language.FRENCH:
           return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} dernières minutes";
+        case Language.KOREAN:
+          return "${(difference / MINUTE_MILLIS).toString().split(".")[0]} 분 전";
         default:
           return "";
       }
@@ -153,6 +161,8 @@ class TimeAgo {
           return "एक घंटा पहले";
         case Language.FRENCH:
           return "il y a une heure";
+        case Language.KOREAN:
+          return "1시간 전";
         default:
           return "";
       }
@@ -180,6 +190,8 @@ class TimeAgo {
           return "${(difference / HOUR_MILLIS).toString().split(".")[0]} घंटो पहले";
         case Language.FRENCH:
           return "${(difference / HOUR_MILLIS).toString().split(".")[0]} heures passées";
+        case Language.KOREAN:
+          return "${(difference / HOUR_MILLIS).toString().split(".")[0]} 시간 전";
         default:
           return "";
       }
@@ -207,6 +219,8 @@ class TimeAgo {
           return "बिता कल";
         case Language.FRENCH:
           return "hier";
+        case Language.KOREAN:
+          return "어제";
         default:
           return "";
       }
@@ -234,6 +248,8 @@ class TimeAgo {
           return "${(difference / DAY_MILLIS).toString().split(".")[0]} दिन पहले";
         case Language.FRENCH:
           return "${(difference / DAY_MILLIS).toString().split(".")[0]} jours passés";
+        case Language.KOREAN:
+          return "${(difference / DAY_MILLIS).toString().split(".")[0]} 일 전";
         default:
           return "";
       }
@@ -283,6 +299,10 @@ class TimeAgo {
           return (difference / MONTH_MILLIS < 2)
               ? "il y a un mois"
               : "${(difference / MONTH_MILLIS).toString().split(".")[0]} derniers mois";
+        case Language.KOREAN:
+          return (difference / MONTH_MILLIS < 2)
+              ? "1달 전"
+              : "${(difference / MONTH_MILLIS).toString().split(".")[0]} 달 전";
         default:
           return "";
       }
@@ -332,6 +352,10 @@ class TimeAgo {
           return (difference / YEAR_MILLIS < 2)
               ? "il y a un an"
               : "${(difference / YEAR_MILLIS).toString().split(".")[0]} dernières années";
+        case Language.KOREAN:
+          return (difference / YEAR_MILLIS < 2)
+              ? "1년 전"
+              : "${(difference / YEAR_MILLIS).toString().split(".")[0]} 년 전";
         default:
           return "";
       }
@@ -352,4 +376,5 @@ enum Language {
   JAPANESE,
   HINDI,
   FRENCH,
+  KOREAN,
 }
