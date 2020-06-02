@@ -1,6 +1,8 @@
 import 'languages/language.dart';
 import 'languages/english.dart';
 
+/// Languages Map, add desired locales by calling
+/// setLocale("prefix e.g: de", Language e.g: German() or GermanSort() for short form)
 Map<String, Language> _languages = {
   'en': English(),
   'en_short': EnglishShort()

@@ -29,3 +29,7 @@
 ## 2.0.0
 
 - Languages Abstraction
+
+## 2.0.1
+
+- Added Doc Comments 

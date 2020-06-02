@@ -2,7 +2,7 @@ import 'package:test/test.dart';
 import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
 
 void main() {
-  DateTime now = DateTime.now();
+  var now = DateTime.now();
 
   test('Default local format', () async {
     final clock = now.add(Duration(seconds: 1));

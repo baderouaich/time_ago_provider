@@ -17,11 +17,6 @@ void main()
 
 ## Supported Languages
 - [x] ENGLISH
-<<<<<<< HEAD
-=======
-- [x] PERSIAN
-- [x] ARABIC
->>>>>>> refs/remotes/origin/master
 - [x] GERMAN
 - More will be added
 
