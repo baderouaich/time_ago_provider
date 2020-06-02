@@ -1,16 +1,15 @@
-import 'package:time_ago_provider/time_ago_provider.dart';
+import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
 
-void main()
-{
-  //Normal Usage
-  //- Get the current time stamp
-  int timeStamp = DateTime.now().millisecondsSinceEpoch;
-  //- getTimeAgo(int timeStamp) returns a String " X minutes/hours/days/months/years ago ...
-  String timeAgo = TimeAgo.getTimeAgo(timeStamp);
-  print("Posted $timeAgo"); // Posted just now
+void main() {
+  //- Get the timestamp
+  DateTime nineMinutesElapsed = DateTime.now().subtract(Duration(minutes: 9));
+  //- Format & get elapsed String
+  print(timeAgo.format(nineMinutesElapsed)); // 9 minutes ago
+  print(timeAgo.format(nineMinutesElapsed, locale: 'en_short')); // 9 min
 
-  //With Language DEFAULT = English
-  int germanTimeStamp = DateTime.now().millisecondsSinceEpoch;
-  String germanTimeAgo = TimeAgo.getTimeAgo(germanTimeStamp, language: Language.GERMAN);
-  print("Gepostet $germanTimeAgo");
+  //Adding new locales
+  // Add a new locale messages
+  timeAgo.setLocale('de', timeAgo.German());
+  timeAgo.setLocale('de_short', timeAgo.GermanShort());
+  print(timeAgo.format(nineMinutesElapsed)); // 15 minutes ago
 }

@@ -25,3 +25,7 @@
 ## 1.0.3
 
 - README.md Edited 1.
+
+## 2.0.0
+
+- Languages Abstraction

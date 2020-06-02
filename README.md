@@ -1,48 +1,24 @@
 ## time_ago_provider
-A Library that takes a time stamp value and returns an interval String of the time that passed between the given time stamp to the present. E.g.("7 minutes ago" ).
-
-## Usage
-Easy Lazy!
-Feed it timestamp, produces you time ago.
+library for generating fuzzy timestamp e.g("9 minutes ago")
 
 ```dart
-import 'package:time_ago_provider/time_ago_provider.dart';
+import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
 
 void main()
 {
   //Normal Usage
-  //- Get the current time stamp
-  int timeStamp = DateTime.now().millisecondsSinceEpoch;
-  //- getTimeAgo(int timeStamp) returns a String " X minutes/hours/days/months/years ago ...
-  String timeAgo = TimeAgo.getTimeAgo(timeStamp);
-  print("Posted $timeAgo"); // Posted just now
-
-  //With Language DEFAULT = English
-  int germanTimeStamp = DateTime.now().millisecondsSinceEpoch;
-  String germanTimeAgo = TimeAgo.getTimeAgo(germanTimeStamp, language: Language.GERMAN);
-  print("Gepostet $germanTimeAgo");
+  //- Get the timestamp
+  DateTime nineMinutesElapsed = DateTime.now().subtract(Duration(minutes: 9));
+  //- Format & get elapsed String
+  print(timeAgo.format(nineMinutesElapsed)); // 9 minutes ago
+  print(timeAgo.format(nineMinutesElapsed, locale: 'en_short')); // 9 min
 }
 ```
 
-
-## Methods
-|Function|Parameter|Description|Return|
-|--|--|--|--|
-|getTimeAgo|`int` timeStamp|Returns an interval String of the time that passed between the given time stamp to the present|`String` timeAgo|
-
-
 ## Supported Languages
 - [x] ENGLISH
-- [x] ARABIC
 - [x] GERMAN
-- [x] SPANISH
-- [x] CHINESE
-- [x] RUSSIAN
-- [x] PORTUGUESE
-- [x] JAPANESE
-- [x] HINDI
-- [x] FRENCH
-
+- More will be added
 
 ## Installing
 [Package](https://pub.dartlang.org/packages/time_ago_provider)
