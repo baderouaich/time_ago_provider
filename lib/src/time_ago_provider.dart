@@ -36,29 +36,29 @@ String format(DateTime date,
   final num YEARS = DAYS / 365;
 
   String res;
-  if (SECONDS < 45)
+  if (SECONDS < 45) {
     res = language.lessThanOneMinute(SECONDS.round());
-  else if (SECONDS < 90)
+  } else if (SECONDS < 90) {
     res = language.aboutAMinute(MINUTES.round());
-  else if (MINUTES < 45)
+  } else if (MINUTES < 45) {
     res = language.minutes(MINUTES.round());
-  else if (MINUTES < 90)
+  } else if (MINUTES < 90) {
     res = language.aboutAnHour(MINUTES.round());
-  else if (HOURS < 24)
+  } else if (HOURS < 24) {
     res = language.hours(HOURS.round());
-  else if (HOURS < 48)
+  } else if (HOURS < 48) {
     res = language.aDay(HOURS.round());
-  else if (DAYS < 30)
+  } else if (DAYS < 30) {
     res = language.days(DAYS.round());
-  else if (DAYS < 60)
+  } else if (DAYS < 60) {
     res = language.aboutAMonth(DAYS.round());
-  else if (DAYS < 365)
+  } else if (DAYS < 365) {
     res = language.months(MONTHS.round());
-  else if (YEARS < 2)
+  } else if (YEARS < 2) {
     res = language.aboutAYear(MONTHS.round());
-  else
+  } else {
     res = language.years(YEARS.round());
-
+  }
   return [pfx, res, sfx]
       .where((s) => s != null && s.isNotEmpty)
       .join(language.delimiter());

@@ -1,7 +1,6 @@
 import 'language.dart';
 
-/// for file formatting, some return values were
-/// intended to be with an if else instead of => to be clear.
+/// Note: Some arabic ternary operators may look reversed due file formatting
 class Arabic implements Language {
   @override
   bool shortForm;
@@ -18,21 +17,9 @@ class Arabic implements Language {
   @override
   String suffixFromNow() => shortForm ? '' : 'من الآن';
   @override
-  String lessThanOneMinute(int seconds) {
-    if (shortForm)
-      return 'الأن';
-    else
-      return 'قبل ثواني';
-  }
-
+  String lessThanOneMinute(int seconds) => shortForm ? 'الأن' : 'قبل ثواني';
   @override
-  String aboutAMinute(int minutes) {
-    if (shortForm)
-      return 'دقيقة واحدة';
-    else
-      return 'قبل دقيقة';
-  }
-
+  String aboutAMinute(int minutes) => shortForm ? 'دقيقة واحدة' : 'قبل دقيقة';
   @override
   String minutes(int minutes) {
     if (shortForm) return '$minutes د';
@@ -48,12 +35,7 @@ class Arabic implements Language {
   }
 
   @override
-  String aboutAnHour(int minutes) {
-    if (shortForm)
-      return '~1 س';
-    else
-      return 'قبل حوالي الساعة';
-  }
+  String aboutAnHour(int minutes) => shortForm ? 'س ~1' : 'قبل حوالي الساعة';
 
   @override
   String hours(int hours) {
@@ -71,12 +53,7 @@ class Arabic implements Language {
   }
 
   @override
-  String aDay(int hours) {
-    if (shortForm)
-      return '~1 ي';
-    else
-      return 'قبل يوم';
-  }
+  String aDay(int hours) => shortForm ? 'ي ~1' : 'قبل يوم';
 
   @override
   String days(int days) {
@@ -94,12 +71,7 @@ class Arabic implements Language {
   }
 
   @override
-  String aboutAMonth(int days) {
-    if (shortForm)
-      return '~1 ش';
-    else
-      return 'قبل حوالي شهر';
-  }
+  String aboutAMonth(int days) => shortForm ? 'ش ~1' : 'قبل حوالي شهر';
 
   @override
   String months(int months) {
@@ -117,12 +89,7 @@ class Arabic implements Language {
   }
 
   @override
-  String aboutAYear(int year) {
-    if (shortForm)
-      return '~1 سنة';
-    else
-      return 'قبل سنة';
-  }
+  String aboutAYear(int year) => shortForm ? 'سنة ~1' : 'قبل سنة';
 
   @override
   String years(int years) {

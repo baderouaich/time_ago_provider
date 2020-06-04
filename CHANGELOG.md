@@ -37,3 +37,7 @@
 ## 2.0.2
 
 - Added Arabic, French Language Support
+
+## 2.0.3
+
+- Formatted documents
