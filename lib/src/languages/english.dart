@@ -1,73 +1,43 @@
 import 'language.dart';
 
-/*Long form: 1 minute ago*/
 class English implements Language {
   @override
-  String prefixAgo() => '';
-  @override
-  String prefixFromNow() => '';
-  @override
-  String suffixAgo() => 'ago';
-  @override
-  String suffixFromNow() => 'from now';
-  @override
-  String lessThanOneMinute(int seconds) => 'a moment';
-  @override
-  String aboutAMinute(int minutes) => 'a minute';
-  @override
-  String minutes(int minutes) => '$minutes minutes';
-  @override
-  String aboutAnHour(int minutes) => 'about an hour';
-  @override
-  String hours(int hours) => '$hours hours';
-  @override
-  String aDay(int hours) => 'a day';
-  @override
-  String days(int days) => '$days days';
-  @override
-  String aboutAMonth(int days) => 'about a month';
-  @override
-  String months(int months) => '$months months';
-  @override
-  String aboutAYear(int year) => 'about a year';
-  @override
-  String years(int years) => '$years years';
-  @override
-  String delimiter() => ' ';
-}
+  bool shortForm;
+  English({bool shortForm = false}) {
+    this.shortForm = shortForm;
+  }
 
-/*Short form: 1 min*/
-class EnglishShort implements Language {
   @override
   String prefixAgo() => '';
   @override
   String prefixFromNow() => '';
   @override
-  String suffixAgo() => '';
+  String suffixAgo() => shortForm ? '' : 'ago';
   @override
-  String suffixFromNow() => '';
+  String suffixFromNow() => shortForm ? '' : 'from now';
   @override
-  String lessThanOneMinute(int seconds) => 'now';
+  String lessThanOneMinute(int seconds) => shortForm ? 'now' : 'a moment';
   @override
-  String aboutAMinute(int minutes) => '1 min';
+  String aboutAMinute(int minutes) => shortForm ? '1 min' : 'a minute';
   @override
-  String minutes(int minutes) => '$minutes min';
+  String minutes(int minutes) =>
+      shortForm ? '$minutes min' : '$minutes minutes';
   @override
-  String aboutAnHour(int minutes) => '~1 h';
+  String aboutAnHour(int minutes) => shortForm ? '~1 h' : 'about an hour';
   @override
-  String hours(int hours) => '$hours h';
+  String hours(int hours) => shortForm ? '$hours h' : '$hours hours';
   @override
-  String aDay(int hours) => '~1 d';
+  String aDay(int hours) => shortForm ? '~1 d' : 'a day';
   @override
-  String days(int days) => '$days d';
+  String days(int days) => shortForm ? '$days d' : '$days days';
   @override
-  String aboutAMonth(int days) => '~1 mo';
+  String aboutAMonth(int days) => shortForm ? '~1 mo' : 'about a month';
   @override
-  String months(int months) => '$months mo';
+  String months(int months) => shortForm ? '$months mo' : '$months months';
   @override
-  String aboutAYear(int year) => '~1 yr';
+  String aboutAYear(int year) => shortForm ? '~1 yr' : 'about a year';
   @override
-  String years(int years) => '$years yr';
+  String years(int years) => shortForm ? '$years yr' : '$years years';
   @override
   String delimiter() => ' ';
 }

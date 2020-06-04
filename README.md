@@ -18,6 +18,8 @@ void main()
 ## Supported Languages
 - [x] ENGLISH
 - [x] GERMAN
+- [x] FRENCH
+- [x] ARABIC
 - More will be added
 
 ## Installing

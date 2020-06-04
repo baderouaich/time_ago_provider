@@ -33,3 +33,7 @@
 ## 2.0.1
 
 - Added Doc Comments 
+
+## 2.0.2
+
+- Added Arabic, French Language Support
