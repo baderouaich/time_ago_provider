@@ -21,23 +21,25 @@ class Polish implements Language {
   String suffixFromNow() => shortForm ? '' : 'temu';
 
   @override
-  String lessThanOneMinute(int seconds) => shortForm ? 'teraz' : 'mniej niż minutę';
+  String lessThanOneMinute(int seconds) =>
+      shortForm ? 'teraz' : 'mniej niż minutę';
 
   @override
-  String aboutAMinute(int minutes) => shortForm ? '~1 min' : 'około jednej minuty';
+  String aboutAMinute(int minutes) =>
+      shortForm ? '~1 min' : 'około jednej minuty';
 
   @override
   String minutes(int minutes) {
-    if(shortForm) {
+    if (shortForm) {
       return '$minutes min';
     }
 
-    if(minutes == 1) {
+    if (minutes == 1) {
       return '1 minuta';
     }
 
-    if(minutes == 2) {
-      return "2 minuty";
+    if (minutes == 2) {
+      return '2 minuty';
     }
 
     return '$minutes minut';
@@ -48,16 +50,16 @@ class Polish implements Language {
 
   @override
   String hours(int hours) {
-    if(shortForm) {
+    if (shortForm) {
       return '${hours}h';
     }
 
-    if(hours == 1) {
+    if (hours == 1) {
       return '1 godzina';
     }
 
-    if(hours > 1 && hours < 5) {
-      return "2 godziny";
+    if (hours > 1 && hours < 5) {
+      return '2 godziny';
     }
 
     return '$hours godzin';
@@ -68,11 +70,11 @@ class Polish implements Language {
 
   @override
   String days(int days) {
-    if(shortForm) {
+    if (shortForm) {
       return '${days}d';
     }
 
-    if(days == 1) {
+    if (days == 1) {
       return '1 dzień';
     }
 
@@ -84,15 +86,15 @@ class Polish implements Language {
 
   @override
   String months(int months) {
-    if(shortForm) {
+    if (shortForm) {
       return '$months mies.';
     }
 
-    if(months == 1) {
+    if (months == 1) {
       return '1 miesiąc';
     }
 
-    if(months > 1 && months < 5) {
+    if (months > 1 && months < 5) {
       return '$months miesiące';
     }
 
@@ -104,15 +106,15 @@ class Polish implements Language {
 
   @override
   String years(int years) {
-    if(shortForm) {
+    if (shortForm) {
       return '${years}l.';
     }
 
-    if(years == 1) {
+    if (years == 1) {
       return '1 rok';
     }
 
-    if(years > 1 && years < 5) {
+    if (years > 1 && years < 5) {
       return '$years lata';
     }
 

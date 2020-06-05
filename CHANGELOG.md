@@ -42,3 +42,7 @@
 ## 2.0.4
 
 - Formatted documents
+
+## 2.0.5
+
+- Added Polish Language Support
