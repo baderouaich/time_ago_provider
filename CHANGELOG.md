@@ -46,3 +46,7 @@
 ## 2.0.5
 
 - Added Polish Language Support
+
+## 2.1.0
+
+- Added Turkish Language Support

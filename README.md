@@ -27,6 +27,7 @@ void main() {
 - [x] POLISH
 - [x] FRENCH
 - [x] ARABIC
+- [x] TURKISH
 - More will be added
 
 ## Installing
@@ -36,11 +37,6 @@ void main() {
 ## Contributors ✨
 Thanks goes to these wonderful people!<br>
 <table>
-   <tr>
-    <a href="https://github.com/BaderEddineOuaich">
-      <img width="50" height="50" src="https://github.com/BaderEddineOuaich.png">
-    </a>
-  </tr>
   <tr>
     <a href="https://github.com/l7ssha">
       <img width="50" height="50" src="https://github.com/l7ssha.png">
@@ -49,6 +45,11 @@ Thanks goes to these wonderful people!<br>
   <tr>
     <a href="https://github.com/veneno261">
       <img width="50" height="50" src="https://github.com/veneno261.png">
+    </a>
+  </tr>
+  <tr>
+    <a href="https://github.com/hacioguz">
+      <img width="50" height="50" src="https://github.com/hacioguz.png">
     </a>
   </tr>
 </table>
