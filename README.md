@@ -54,7 +54,7 @@ Thanks goes to these wonderful people!<br>
   </tr>
   <tr>
     <a href="https://github.com/bgoktugozdemir">
-      <img width="50" height="50" src="https://github.com/bgoktugozdemir">
+      <img width="50" height="50" src="https://github.com/bgoktugozdemir.png">
     </a>
   </tr>
 
