@@ -17,7 +17,7 @@ String format(DateTime date,
     {String locale, DateTime clock, bool enableFromNow}) {
   final m_locale = locale ?? 'en';
   final m_isFromNowEnabled = enableFromNow ?? false;
-  final language = _languages[m_locale] ?? English();
+  final m_language = _languages[m_locale] ?? English();
   final m_clock = clock ?? DateTime.now();
   var deltaTime = m_clock.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
 
@@ -25,11 +25,11 @@ String format(DateTime date,
 
   if (m_isFromNowEnabled && deltaTime < 0) {
     deltaTime = date.isBefore(m_clock) ? deltaTime : deltaTime.abs();
-    pfx = language.prefixFromNow();
-    sfx = language.suffixFromNow();
+    pfx = m_language.prefixFromNow();
+    sfx = m_language.suffixFromNow();
   } else {
-    pfx = language.prefixAgo();
-    sfx = language.suffixAgo();
+    pfx = m_language.prefixAgo();
+    sfx = m_language.suffixAgo();
   }
 
   final num SECONDS = deltaTime / 1000;
@@ -41,31 +41,31 @@ String format(DateTime date,
 
   String res;
   if (SECONDS < 45) {
-    res = language.lessThanOneMinute(SECONDS.round());
+    res = m_language.lessThanOneMinute(SECONDS.round());
   } else if (SECONDS < 90) {
-    res = language.aboutAMinute(MINUTES.round());
+    res = m_language.aboutAMinute(MINUTES.round());
   } else if (MINUTES < 45) {
-    res = language.minutes(MINUTES.round());
+    res = m_language.minutes(MINUTES.round());
   } else if (MINUTES < 90) {
-    res = language.aboutAnHour(MINUTES.round());
+    res = m_language.aboutAnHour(MINUTES.round());
   } else if (HOURS < 24) {
-    res = language.hours(HOURS.round());
+    res = m_language.hours(HOURS.round());
   } else if (HOURS < 48) {
-    res = language.aDay(HOURS.round());
+    res = m_language.aDay(HOURS.round());
   } else if (DAYS < 30) {
-    res = language.days(DAYS.round());
+    res = m_language.days(DAYS.round());
   } else if (DAYS < 60) {
-    res = language.aboutAMonth(DAYS.round());
+    res = m_language.aboutAMonth(DAYS.round());
   } else if (DAYS < 365) {
-    res = language.months(MONTHS.round());
+    res = m_language.months(MONTHS.round());
   } else if (YEARS < 2) {
-    res = language.aboutAYear(MONTHS.round());
+    res = m_language.aboutAYear(MONTHS.round());
   } else {
-    res = language.years(YEARS.round());
+    res = m_language.years(YEARS.round());
   }
   return [pfx, res, sfx]
       .where((s) => s != null && s.isNotEmpty)
-      .join(language.delimiter());
+      .join(m_language.delimiter());
 }
 
 /// Locales/Languages Map, add desired locales by calling
@@ -84,7 +84,7 @@ Map<String, Language> _languages = {
   'fr': French(),
   'fr_short': French(shortForm: true),
   'ar': Arabic(),
-  'ar_short': Arabic(shortForm: true)
+  'ar_short': Arabic(shortForm: true),
   'tr': Turkish(),
   'tr_short': Turkish(shortForm: true)
 };

@@ -3,7 +3,7 @@ import 'language.dart';
 class Turkish implements Language {
   @override
   bool shortForm;
-  English({bool shortForm = false}) {
+  Turkish({bool shortForm = false}) {
     this.shortForm = shortForm;
   }
 
@@ -20,10 +20,10 @@ class Turkish implements Language {
   @override
   String aboutAMinute(int minutes) => shortForm ? '1 dk' : 'bir dakika';
   @override
-  String minutes(int minutes) =>
-      shortForm ? '$minutes dk' : '$minutes dakika';
+  String minutes(int minutes) => shortForm ? '$minutes dk' : '$minutes dakika';
   @override
-  String aboutAnHour(int minutes) => shortForm ? '~1 saat' : 'yaklaşık bir saat';
+  String aboutAnHour(int minutes) =>
+      shortForm ? '~1 saat' : 'yaklaşık bir saat';
   @override
   String hours(int hours) => '$hours saat';
   @override

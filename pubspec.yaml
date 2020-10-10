@@ -1,6 +1,6 @@
 name: time_ago_provider
 description: library for generating fuzzy timestamp for example ("9 minutes ago")
-version: 2.1.0
+version: 2.2.0
 homepage: https://github.com/BaderEddineOuaich/time_ago_provider
 author: Bader Eddine Ouaich <badereddineouaich@gmail.com>
 

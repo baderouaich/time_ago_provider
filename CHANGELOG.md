@@ -50,3 +50,8 @@
 ## 2.1.0
 
 - Added Turkish Language Support
+
+## 2.2.0
+
+- Added Turkish to languages map
+- Fixed a Bug in Turkish class
