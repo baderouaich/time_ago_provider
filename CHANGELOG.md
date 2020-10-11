@@ -53,5 +53,9 @@
 
 ## 2.2.0
 
-- Added Turkish to languages map
+- Added Turkish to languages map.
 - Fixed a Bug in Turkish class
+
+## 2.2.1
+
+- A little translation mistake in Turkish Language fix.
