@@ -16,7 +16,7 @@ class Turkish implements Language {
   @override
   String suffixFromNow() => shortForm ? '' : 'şu andan itibaren';
   @override
-  String lessThanOneMinute(int seconds) => 'şimdi';
+  String lessThanOneMinute(int seconds) => shortForm ? 'şimdi' : 'birkaç saniye';
   @override
   String aboutAMinute(int minutes) => shortForm ? '1 dk' : 'bir dakika';
   @override
