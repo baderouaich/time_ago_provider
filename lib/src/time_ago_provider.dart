@@ -1,3 +1,5 @@
+import 'package:time_ago_provider/time_ago_provider.dart';
+
 import 'languages/language.dart';
 import 'languages/english.dart';
 import 'languages/german.dart';
@@ -86,7 +88,9 @@ Map<String, Language> _languages = {
   'ar': Arabic(),
   'ar_short': Arabic(shortForm: true),
   'tr': Turkish(),
-  'tr_short': Turkish(shortForm: true)
+  'tr_short': Turkish(shortForm: true),
+  'pr': Portuguese(),
+  'pr_short': Portuguese(shortForm: true)
 };
 
 /// Sets a [locale] with the provided [Language] to be available when

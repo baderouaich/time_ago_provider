@@ -16,9 +16,11 @@ class Portuguese implements Language {
   @override
   String suffixFromNow() => shortForm ? '' : 'desde';
   @override
-  String lessThanOneMinute(int seconds) => shortForm ? 'agora' : 'segundos atrás';
+  String lessThanOneMinute(int seconds) =>
+      shortForm ? 'agora' : 'segundos atrás';
   @override
-  String aboutAMinute(int minutes) => shortForm ? '1 min' : 'menos de um minuto';
+  String aboutAMinute(int minutes) =>
+      shortForm ? '1 min' : 'menos de um minuto';
   @override
   String minutes(int minutes) =>
       shortForm ? '$minutes min' : '$minutes minutos';

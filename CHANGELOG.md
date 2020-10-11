@@ -59,3 +59,7 @@
 ## 2.2.1
 
 - A little translation mistake in Turkish Language fix.
+
+## 2.3.1
+
+- Added Portuguese Language

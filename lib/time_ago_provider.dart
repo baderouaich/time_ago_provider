@@ -6,5 +6,6 @@ export 'src/languages/polish.dart';
 export 'src/languages/french.dart';
 export 'src/languages/arabic.dart';
 export 'src/languages/turkish.dart';
+export 'src/languages/portuguese.dart';
 
 export 'src/time_ago_provider.dart';

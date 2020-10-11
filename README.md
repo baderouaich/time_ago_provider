@@ -28,6 +28,7 @@ void main() {
 - [x] FRENCH
 - [x] ARABIC
 - [x] TURKISH
+- [x] PORTUGUESE
 - More will be added
 
 ## Installing
@@ -57,7 +58,11 @@ Thanks goes to these wonderful people!<br>
       <img width="50" height="50" src="https://github.com/bgoktugozdemir.png">
     </a>
   </tr>
-
+  <tr>
+    <a href="https://github.com/luizeof">
+      <img width="50" height="50" src="https://github.com/luizeof.png">
+    </a>
+  </tr>
 </table>
 
 
