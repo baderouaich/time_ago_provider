@@ -15,11 +15,21 @@ import 'languages/turkish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String format(DateTime date, {bool full = false, String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
-  var deltaTime = clock.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
+  final duration = clock.difference(date);
+  
+  if (full) {
+    return _formatFullForm(duration, language);
+  }
+  
+  return _formatShortForm(duration, date, language, clock, enableFromNow);
+}
+
+String _formatShortForm(Duration duration, DateTime date, Language language, DateTime clock, bool enableFromNow) {
+  var deltaTime = duration.inMilliseconds;
   String pfx, sfx;
 
   if (enableFromNow && deltaTime < 0) {
@@ -66,6 +76,20 @@ String format(DateTime date, {String locale = 'en', DateTime? clock, bool enable
   return [pfx, res, sfx]
       .where((s) => s.isNotEmpty)
       .join(language.delimiter());
+}
+
+String _formatFullForm(Duration duration, Language language) {
+  final buffer = StringBuffer();
+
+  buffer.write(language.days(duration.inDays));
+  buffer.write(', ');
+
+  buffer.write(language.hours(duration.inHours % 24));
+  buffer.write(', ');
+
+  buffer.write(language.minutes(duration.inMinutes % 60));
+
+  return buffer.toString();
 }
 
 /// Locales/Languages Map, add desired locales by calling
