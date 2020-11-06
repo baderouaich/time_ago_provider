@@ -42,3 +42,28 @@
 ## 2.0.4
 
 - Formatted documents
+
+## 2.0.5
+
+- Added Polish Language Support
+
+## 2.1.0
+
+- Added Turkish Language Support
+
+## 2.2.0
+
+- Added Turkish to languages map.
+- Fixed a Bug in Turkish class
+
+## 2.2.1
+
+- A little translation mistake in Turkish Language fix.
+
+## 2.3.1
+
+- Added Portuguese Language
+
+## 3.0.0
+
+- Migrated to NNBD and added support for Dart 2.12
