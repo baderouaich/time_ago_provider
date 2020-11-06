@@ -9,18 +9,15 @@ import 'languages/german.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date,
-    {String locale, DateTime clock, bool enableFromNow}) {
-  final m_locale = locale ?? 'en';
-  final m_isFromNowEnabled = enableFromNow ?? false;
-  final language = _languages[m_locale] ?? English();
-  final m_clock = clock ?? DateTime.now();
-  var deltaTime = m_clock.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
+String format(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+  final language = _languages[locale] ?? English();
+  clock ??= DateTime.now();
 
+  var deltaTime = clock.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
   String pfx, sfx;
 
-  if (m_isFromNowEnabled && deltaTime < 0) {
-    deltaTime = date.isBefore(m_clock) ? deltaTime : deltaTime.abs();
+  if (enableFromNow && deltaTime < 0) {
+    deltaTime = date.isBefore(clock) ? deltaTime : deltaTime.abs();
     pfx = language.prefixFromNow();
     sfx = language.suffixFromNow();
   } else {
@@ -59,8 +56,9 @@ String format(DateTime date,
   } else {
     res = language.years(YEARS.round());
   }
+
   return [pfx, res, sfx]
-      .where((s) => s != null && s.isNotEmpty)
+      .where((s) => s.isNotEmpty)
       .join(language.delimiter());
 }
 
@@ -91,7 +89,5 @@ Map<String, Language> _languages = {
 /// with the desired messages
 ///
 void setLocale(String locale, Language language) {
-  assert(locale != null, '[locale] must not be null');
-  assert(language != null, '[language] must not be null');
   _languages[locale] = language;
 }

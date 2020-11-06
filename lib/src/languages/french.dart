@@ -3,9 +3,8 @@ import 'language.dart';
 class French implements Language {
   @override
   bool shortForm;
-  French({bool shortForm = false}) {
-    this.shortForm = shortForm;
-  }
+
+  French({this.shortForm = false});
 
   @override
   String prefixAgo() => 'il y a';
