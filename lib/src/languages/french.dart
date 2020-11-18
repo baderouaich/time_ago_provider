@@ -7,6 +7,11 @@ class French implements Language {
   French({this.shortForm = false});
 
   @override
+  String aboutASecond(int seconds) => 'environ une seconde';
+  @override
+  String seconds(int seconds) => '$seconds secondes';
+
+  @override
   String prefixAgo() => 'il y a';
   @override
   String prefixFromNow() => "d'ici";

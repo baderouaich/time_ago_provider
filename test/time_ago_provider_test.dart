@@ -19,7 +19,19 @@ void main() {
 
   test('Default local format with full message', () async {
     final clock = now.add(Duration(days: 15, hours: 15, minutes: 55));
-    final result = time_ago.format(now, clock: clock, full: true);
+    final result = time_ago.formatFull(now, clock: clock);
     expect(result, '15 days, 15 hours, 55 minutes');
+  });
+
+  test('Default local format with full message full duration', () async {
+    final clock = now.add(Duration(days: 986, hours: 67, minutes: 12));
+    final result = time_ago.formatFull(now, clock: clock);
+    expect(result, '2 years, 8 months, 28 days, 19 hours, 12 minutes');
+  });
+
+  test('Default local format with full message with duration less than 1 second', () async {
+    final clock = now.add(Duration(milliseconds: 5, microseconds: 600));
+    final result = time_ago.formatFull(now, clock: clock);
+    expect(result, '1 second');
   });
 }

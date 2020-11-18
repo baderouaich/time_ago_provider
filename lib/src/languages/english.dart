@@ -7,6 +7,10 @@ class English implements Language {
   English({this.shortForm = false});
 
   @override
+  String seconds(int seconds) => shortForm ? '$seconds sec' : '$seconds seconds';
+  @override
+  String aboutASecond(int seconds) => shortForm ? '1 sec' : '1 second';
+  @override
   String prefixAgo() => '';
   @override
   String prefixFromNow() => '';

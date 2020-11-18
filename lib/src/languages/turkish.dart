@@ -7,6 +7,11 @@ class Turkish implements Language {
   Turkish({this.shortForm = false});
 
   @override
+  String aboutASecond(int seconds) => 'yaklaşık bir saniye';
+  @override
+  String seconds(int seconds) => '$seconds saniye';
+
+  @override
   String prefixAgo() => '';
   @override
   String prefixFromNow() => '';

@@ -8,6 +8,9 @@ abstract class Language {
   String suffixAgo();
   String suffixFromNow();
 
+  String aboutASecond(int seconds);
+  String seconds(int seconds);
+
   String lessThanOneMinute(int seconds);
   String aboutAMinute(int minutes);
   String minutes(int minutes);

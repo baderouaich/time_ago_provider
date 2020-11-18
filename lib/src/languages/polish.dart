@@ -19,6 +19,26 @@ class Polish implements Language {
   String suffixFromNow() => shortForm ? '' : 'temu';
 
   @override
+  String seconds(int seconds) {
+    if (shortForm) {
+      return '${seconds}s';
+    }
+
+    if (seconds == 1) {
+      return '1 sekunda';
+    }
+
+    if (seconds > 1 && seconds < 5) {
+      return '$seconds sekundy';
+    }
+
+    return '$seconds sekund';
+  }
+
+  @override
+  String aboutASecond(int seconds) => shortForm ? '1s' : 'sekunda';
+
+  @override
   String lessThanOneMinute(int seconds) =>
       shortForm ? 'teraz' : 'mniej niż minutę';
 

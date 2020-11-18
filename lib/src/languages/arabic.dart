@@ -8,6 +8,11 @@ class Arabic implements Language {
   Arabic({this.shortForm = false});
 
   @override
+  String aboutASecond(int seconds) => '';
+  @override
+  String seconds(int seconds) => '';
+
+  @override
   String prefixAgo() => '';
   @override
   String prefixFromNow() => '';

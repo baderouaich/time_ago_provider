@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:time_ago_provider/time_ago_provider.dart';
 
 import 'languages/language.dart';
@@ -15,20 +17,11 @@ import 'languages/turkish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date, {bool full = false, String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String format(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
   final duration = clock.difference(date);
-  
-  if (full) {
-    return _formatFullForm(duration, language);
-  }
-  
-  return _formatShortForm(duration, date, language, clock, enableFromNow);
-}
-
-String _formatShortForm(Duration duration, DateTime date, Language language, DateTime clock, bool enableFromNow) {
   var deltaTime = duration.inMilliseconds;
   String pfx, sfx;
 
@@ -78,16 +71,68 @@ String _formatShortForm(Duration duration, DateTime date, Language language, Dat
       .join(language.delimiter());
 }
 
-String _formatFullForm(Duration duration, Language language) {
+String formatFull(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+  final language = _languages[locale] ?? English();
+  clock ??= DateTime.now();
+  final duration = clock.difference(date);
   final buffer = StringBuffer();
 
-  buffer.write(language.days(duration.inDays));
-  buffer.write(', ');
+  final seconds = duration.inSeconds % 60;
 
-  buffer.write(language.hours(duration.inHours % 24));
-  buffer.write(', ');
+  if (duration.inSeconds < 1) {
+    return language.aboutASecond(0);
+  }
 
-  buffer.write(language.minutes(duration.inMinutes % 60));
+  final minutes = duration.inMinutes % 60;
+  final hours = duration.inHours % 24;
+  final days = duration.inDays % 30;
+  final _months = (duration.inDays / 30).floor();
+  final months =  _months % 12;
+  final years = (_months / 12).floor();
+
+  if (years > 0) {
+    buffer.write(language.years(years));
+  }
+
+  if (months > 0) {
+    if (years > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.months(months));
+  }
+
+  if (days > 0) {
+    if (months > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.days(days));
+  }
+
+  if (hours > 0) {
+    if (days > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.hours(hours));
+  }
+
+  if (minutes > 0) {
+    if (hours > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.minutes(minutes));
+  }
+
+  if (seconds > 0) {
+    if (minutes > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.seconds(seconds));
+  }
 
   return buffer.toString();
 }

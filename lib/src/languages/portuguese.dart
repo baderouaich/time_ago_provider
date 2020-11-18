@@ -7,6 +7,11 @@ class Portuguese implements Language {
   Portuguese({this.shortForm = false});
 
   @override
+  String aboutASecond(int seconds) => 'cerca de um segundo';
+  @override
+  String seconds(int seconds) => shortForm ? '$seconds segs' : '$seconds segundos';
+
+  @override
   String prefixAgo() => '';
   @override
   String prefixFromNow() => '';
