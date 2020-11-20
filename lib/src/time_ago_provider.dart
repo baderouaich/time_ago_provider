@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:time_ago_provider/time_ago_provider.dart';
 
 import 'languages/language.dart';
@@ -17,7 +15,8 @@ import 'languages/turkish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String format(DateTime date,
+    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
@@ -66,12 +65,11 @@ String format(DateTime date, {String locale = 'en', DateTime? clock, bool enable
     res = language.years(YEARS.round());
   }
 
-  return [pfx, res, sfx]
-      .where((s) => s.isNotEmpty)
-      .join(language.delimiter());
+  return [pfx, res, sfx].where((s) => s.isNotEmpty).join(language.delimiter());
 }
 
-String formatFull(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String formatFull(DateTime date,
+    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
   final duration = clock.difference(date);
@@ -87,7 +85,7 @@ String formatFull(DateTime date, {String locale = 'en', DateTime? clock, bool en
   final hours = duration.inHours % 24;
   final days = duration.inDays % 30;
   final _months = (duration.inDays / 30).floor();
-  final months =  _months % 12;
+  final months = _months % 12;
   final years = (_months / 12).floor();
 
   if (years > 0) {

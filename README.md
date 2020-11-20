@@ -5,20 +5,22 @@ library for generating fuzzy timestamp e.g("9 minutes ago")
 import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
 
 void main() {
-  /// Get the timestamp
+  /// Default Format (summary of elapsed time)
   final nineMinutesElapsed = DateTime.now().subtract(Duration(minutes: 9));
+  print(time_ago.format(nineMinutesElapsed)); // 9 minutes ago
+  print(time_ago.format(nineMinutesElapsed, locale: 'en_short')); // 9 min
 
-  /// Format & get elapsed String
-  print(timeAgo.format(nineMinutesElapsed)); // 9 minutes ago
-  print(timeAgo.format(nineMinutesElapsed, locale: 'en_short')); // 9 min
+  /// Full Format (detailed elapsed time years, months, days...)
+  final longTimeElapsed = DateTime.now().subtract(Duration(days: 999, hours: 6, minutes: 8, seconds: 3));
+  print(time_ago.formatFull(longTimeElapsed)); // 2 years, 9 months, 9 days, 6 hours, 8 minutes, 3 seconds
+  print(time_ago.formatFull(longTimeElapsed, locale: 'en_short')); // 2 yr, 9 mo, 9 d, 6 h, 8 min, 3 sec
 
   /// Adding new locales
-  timeAgo.setLocale('de', timeAgo.German());
-  timeAgo.setLocale('de_short', timeAgo.German(shortForm: true));
-  print(timeAgo.format(nineMinutesElapsed, locale: 'de')); // vor 9 Minuten
-  print(timeAgo.format(nineMinutesElapsed, locale: 'de_short')); // 9 Min.
+  time_ago.setLocale('de', time_ago.German());
+  time_ago.setLocale('de_short', time_ago.German(shortForm: true));
+  print(time_ago.format(nineMinutesElapsed, locale: 'de')); // vor 9 Minuten
+  print(time_ago.format(nineMinutesElapsed, locale: 'de_short')); // 9 Min.
 }
-
 ```
 
 ## Supported Languages

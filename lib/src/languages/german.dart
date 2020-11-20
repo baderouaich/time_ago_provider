@@ -9,7 +9,8 @@ class German implements Language {
   @override
   String aboutASecond(int seconds) => 'etwa eine Sekunde';
   @override
-  String seconds(int seconds) => shortForm ? '$seconds Sek' : '$seconds Sekunden';
+  String seconds(int seconds) =>
+      shortForm ? '$seconds Sek' : '$seconds Sekunden';
 
   @override
   String prefixAgo() => shortForm ? '' : 'vor';

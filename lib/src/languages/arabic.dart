@@ -8,10 +8,9 @@ class Arabic implements Language {
   Arabic({this.shortForm = false});
 
   @override
-  String aboutASecond(int seconds) => '';
+  String aboutASecond(int seconds) => shortForm ? 'حوالي ثانية' : 'ث';
   @override
-  String seconds(int seconds) => '';
-
+  String seconds(int seconds) => shortForm ? '$seconds ث' : '$seconds ثواني';
   @override
   String prefixAgo() => '';
   @override
@@ -34,11 +33,11 @@ class Arabic implements Language {
     } else if (minutes == 2) {
       return 'منذ دقيقتين';
     } else if (minutes > 2 && minutes < 11) {
-      return ' منذ $minutes دقائق ';
+      return 'منذ $minutes دقائق';
     } else if (minutes > 10) {
-      return ' منذ $minutes دقيقة ';
+      return 'منذ $minutes دقيقة';
     }
-    return ' منذ $minutes دقائق ';
+    return 'منذ $minutes دقائق';
   }
 
   @override
@@ -55,12 +54,12 @@ class Arabic implements Language {
     } else if (hours == 2) {
       return 'منذ ساعتين';
     } else if (hours > 2 && hours < 11) {
-      return ' منذ $hours ساعات ';
+      return 'منذ $hours ساعات';
     } else if (hours > 10) {
-      return ' منذ $hours ساعة ';
+      return 'منذ $hours ساعة';
     }
 
-    return ' منذ $hours ساعات ';
+    return 'منذ $hours ساعات';
   }
 
   @override
@@ -77,12 +76,12 @@ class Arabic implements Language {
     } else if (days == 2) {
       return 'منذ يومين';
     } else if (days > 2 && days < 11) {
-      return ' منذ $days ايام ';
+      return 'منذ $days ايام';
     } else if (days > 10) {
-      return ' منذ $days يوم ';
+      return 'منذ $days يوم';
     }
 
-    return ' منذ $days ايام ';
+    return 'منذ $days ايام';
   }
 
   @override
@@ -98,12 +97,12 @@ class Arabic implements Language {
     } else if (months == 2) {
       return 'منذ شهرين';
     } else if (months > 2 && months < 11) {
-      return ' منذ $months اشهر ';
+      return 'منذ $months اشهر';
     } else if (months > 10) {
-      return ' منذ $months شهر ';
+      return 'منذ $months شهر';
     }
 
-    return ' منذ $months شهور ';
+    return 'منذ $months شهور';
   }
 
   @override
@@ -119,12 +118,12 @@ class Arabic implements Language {
     } else if (years == 2) {
       return 'منذ سنتين';
     } else if (years > 2 && years < 11) {
-      return ' منذ $years سنوات ';
+      return 'منذ $years سنوات';
     } else if (years > 10) {
-      return ' منذ $years سنة ';
+      return 'منذ $years سنة';
     }
 
-    return ' منذ $years سنوات ';
+    return 'منذ $years سنوات';
   }
 
   @override

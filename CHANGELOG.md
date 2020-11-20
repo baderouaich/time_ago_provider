@@ -66,4 +66,6 @@
 
 ## 3.0.0
 
-- Migrated to NNBD and added support for Dart 2.12
+- Added Support for Dart 2.10
+- Added Support for Seconds unit
+- Added Support for Detailed format formatFull() e.g: '3 years, 9 months, 9 days, 6 hours, 8 minutes, 3 seconds'
