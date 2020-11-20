@@ -3,9 +3,13 @@ import 'language.dart';
 class Portuguese implements Language {
   @override
   bool shortForm;
-  Portuguese({bool shortForm = false}) {
-    this.shortForm = shortForm;
-  }
+
+  Portuguese({this.shortForm = false});
+
+  @override
+  String aboutASecond(int seconds) => 'cerca de um segundo';
+  @override
+  String seconds(int seconds) => shortForm ? '$seconds segs' : '$seconds segundos';
 
   @override
   String prefixAgo() => '';

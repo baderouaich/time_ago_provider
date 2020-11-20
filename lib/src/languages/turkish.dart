@@ -3,9 +3,13 @@ import 'language.dart';
 class Turkish implements Language {
   @override
   bool shortForm;
-  Turkish({bool shortForm = false}) {
-    this.shortForm = shortForm;
-  }
+
+  Turkish({this.shortForm = false});
+
+  @override
+  String aboutASecond(int seconds) => 'yaklaşık bir saniye';
+  @override
+  String seconds(int seconds) => '$seconds saniye';
 
   @override
   String prefixAgo() => '';

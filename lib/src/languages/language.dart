@@ -1,15 +1,15 @@
 abstract class Language {
   /// flag for short form e.g(1 min) | long form e.g(1 minute ago)
-  bool shortForm;
-  Language({bool shortForm = false}) {
-    this.shortForm = shortForm ?? false;
-  }
+  bool get shortForm;
 
   String prefixAgo();
   String prefixFromNow();
 
   String suffixAgo();
   String suffixFromNow();
+
+  String aboutASecond(int seconds);
+  String seconds(int seconds);
 
   String lessThanOneMinute(int seconds);
   String aboutAMinute(int minutes);

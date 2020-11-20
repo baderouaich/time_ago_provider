@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:time_ago_provider/time_ago_provider.dart';
 
 import 'languages/language.dart';
@@ -15,23 +17,21 @@ import 'languages/turkish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date,
-    {String locale, DateTime clock, bool enableFromNow}) {
-  final m_locale = locale ?? 'en';
-  final m_isFromNowEnabled = enableFromNow ?? false;
-  final m_language = _languages[m_locale] ?? English();
-  final m_clock = clock ?? DateTime.now();
-  var deltaTime = m_clock.millisecondsSinceEpoch - date.millisecondsSinceEpoch;
+String format(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+  final language = _languages[locale] ?? English();
+  clock ??= DateTime.now();
 
+  final duration = clock.difference(date);
+  var deltaTime = duration.inMilliseconds;
   String pfx, sfx;
 
-  if (m_isFromNowEnabled && deltaTime < 0) {
-    deltaTime = date.isBefore(m_clock) ? deltaTime : deltaTime.abs();
-    pfx = m_language.prefixFromNow();
-    sfx = m_language.suffixFromNow();
+  if (enableFromNow && deltaTime < 0) {
+    deltaTime = date.isBefore(clock) ? deltaTime : deltaTime.abs();
+    pfx = language.prefixFromNow();
+    sfx = language.suffixFromNow();
   } else {
-    pfx = m_language.prefixAgo();
-    sfx = m_language.suffixAgo();
+    pfx = language.prefixAgo();
+    sfx = language.suffixAgo();
   }
 
   final num SECONDS = deltaTime / 1000;
@@ -43,31 +43,98 @@ String format(DateTime date,
 
   String res;
   if (SECONDS < 45) {
-    res = m_language.lessThanOneMinute(SECONDS.round());
+    res = language.lessThanOneMinute(SECONDS.round());
   } else if (SECONDS < 90) {
-    res = m_language.aboutAMinute(MINUTES.round());
+    res = language.aboutAMinute(MINUTES.round());
   } else if (MINUTES < 45) {
-    res = m_language.minutes(MINUTES.round());
+    res = language.minutes(MINUTES.round());
   } else if (MINUTES < 90) {
-    res = m_language.aboutAnHour(MINUTES.round());
+    res = language.aboutAnHour(MINUTES.round());
   } else if (HOURS < 24) {
-    res = m_language.hours(HOURS.round());
+    res = language.hours(HOURS.round());
   } else if (HOURS < 48) {
-    res = m_language.aDay(HOURS.round());
+    res = language.aDay(HOURS.round());
   } else if (DAYS < 30) {
-    res = m_language.days(DAYS.round());
+    res = language.days(DAYS.round());
   } else if (DAYS < 60) {
-    res = m_language.aboutAMonth(DAYS.round());
+    res = language.aboutAMonth(DAYS.round());
   } else if (DAYS < 365) {
-    res = m_language.months(MONTHS.round());
+    res = language.months(MONTHS.round());
   } else if (YEARS < 2) {
-    res = m_language.aboutAYear(MONTHS.round());
+    res = language.aboutAYear(MONTHS.round());
   } else {
-    res = m_language.years(YEARS.round());
+    res = language.years(YEARS.round());
   }
+
   return [pfx, res, sfx]
-      .where((s) => s != null && s.isNotEmpty)
-      .join(m_language.delimiter());
+      .where((s) => s.isNotEmpty)
+      .join(language.delimiter());
+}
+
+String formatFull(DateTime date, {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+  final language = _languages[locale] ?? English();
+  clock ??= DateTime.now();
+  final duration = clock.difference(date);
+  final buffer = StringBuffer();
+
+  final seconds = duration.inSeconds % 60;
+
+  if (duration.inSeconds < 1) {
+    return language.aboutASecond(0);
+  }
+
+  final minutes = duration.inMinutes % 60;
+  final hours = duration.inHours % 24;
+  final days = duration.inDays % 30;
+  final _months = (duration.inDays / 30).floor();
+  final months =  _months % 12;
+  final years = (_months / 12).floor();
+
+  if (years > 0) {
+    buffer.write(language.years(years));
+  }
+
+  if (months > 0) {
+    if (years > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.months(months));
+  }
+
+  if (days > 0) {
+    if (months > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.days(days));
+  }
+
+  if (hours > 0) {
+    if (days > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.hours(hours));
+  }
+
+  if (minutes > 0) {
+    if (hours > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.minutes(minutes));
+  }
+
+  if (seconds > 0) {
+    if (minutes > 0) {
+      buffer.write(', ');
+    }
+
+    buffer.write(language.seconds(seconds));
+  }
+
+  return buffer.toString();
 }
 
 /// Locales/Languages Map, add desired locales by calling
@@ -107,7 +174,5 @@ Map<String, Language> _languages = {
 /// with the desired messages
 ///
 void setLocale(String locale, Language language) {
-  assert(locale != null, '[locale] must not be null');
-  assert(language != null, '[language] must not be null');
   _languages[locale] = language;
 }

@@ -4,9 +4,7 @@ class Polish implements Language {
   @override
   bool shortForm;
 
-  Polish({bool shortForm = false}) {
-    this.shortForm = shortForm;
-  }
+  Polish({this.shortForm = false});
 
   @override
   String prefixAgo() => '';
@@ -19,6 +17,26 @@ class Polish implements Language {
 
   @override
   String suffixFromNow() => shortForm ? '' : 'temu';
+
+  @override
+  String seconds(int seconds) {
+    if (shortForm) {
+      return '${seconds}s';
+    }
+
+    if (seconds == 1) {
+      return '1 sekunda';
+    }
+
+    if (seconds > 1 && seconds < 5) {
+      return '$seconds sekundy';
+    }
+
+    return '$seconds sekund';
+  }
+
+  @override
+  String aboutASecond(int seconds) => shortForm ? '1s' : 'sekunda';
 
   @override
   String lessThanOneMinute(int seconds) =>

@@ -4,9 +4,13 @@ import 'language.dart';
 class Arabic implements Language {
   @override
   bool shortForm;
-  Arabic({bool shortForm = false}) {
-    this.shortForm = shortForm;
-  }
+
+  Arabic({this.shortForm = false});
+
+  @override
+  String aboutASecond(int seconds) => '';
+  @override
+  String seconds(int seconds) => '';
 
   @override
   String prefixAgo() => '';

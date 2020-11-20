@@ -63,3 +63,7 @@
 ## 2.3.1
 
 - Added Portuguese Language
+
+## 3.0.0
+
+- Migrated to NNBD and added support for Dart 2.12
