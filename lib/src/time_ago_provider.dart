@@ -16,7 +16,7 @@ import 'languages/turkish.dart';
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
 String format(DateTime date,
-    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
+    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
@@ -69,7 +69,7 @@ String format(DateTime date,
 }
 
 String formatFull(DateTime date,
-    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
+    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
   final duration = clock.difference(date);
