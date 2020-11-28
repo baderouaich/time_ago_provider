@@ -101,7 +101,7 @@ String formatFull(DateTime date,
   }
 
   if (days > 0) {
-    if (months > 0) {
+    if (months > 0 || years > 0) {
       buffer.write(', ');
     }
 
@@ -109,7 +109,7 @@ String formatFull(DateTime date,
   }
 
   if (hours > 0) {
-    if (days > 0) {
+    if (days > 0 || months > 0 || years > 0) {
       buffer.write(', ');
     }
 
@@ -117,7 +117,7 @@ String formatFull(DateTime date,
   }
 
   if (minutes > 0) {
-    if (hours > 0) {
+    if (hours > 0 || days > 0 || months > 0 || years > 0) {
       buffer.write(', ');
     }
 
@@ -125,7 +125,7 @@ String formatFull(DateTime date,
   }
 
   if (seconds > 0) {
-    if (minutes > 0) {
+    if (minutes > 0 || hours > 0 || days > 0 || months > 0 || years > 0) {
       buffer.write(', ');
     }
 
