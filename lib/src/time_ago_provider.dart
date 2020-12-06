@@ -3,6 +3,7 @@ import 'package:time_ago_provider/time_ago_provider.dart';
 import 'languages/language.dart';
 import 'languages/english.dart';
 import 'languages/german.dart';
+import 'languages/italian.dart';
 import 'languages/polish.dart';
 import 'languages/arabic.dart';
 import 'languages/french.dart';
@@ -15,8 +16,7 @@ import 'languages/turkish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date,
-    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
+String format(DateTime date, {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
@@ -146,6 +146,8 @@ Map<String, Language> _languages = {
   'en_short': English(shortForm: true),
   'de': German(),
   'de_short': German(shortForm: true),
+  'it': Italian(),
+  'it_short': Italian(shortForm: true),
   'pl': Polish(),
   'pl_short': Polish(shortForm: true),
   'fr': French(),
