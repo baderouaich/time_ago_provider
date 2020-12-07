@@ -31,6 +31,7 @@ void main() {
 - [x] ARABIC
 - [x] TURKISH
 - [x] PORTUGUESE
+- [x] ITALIAN
 - More will be added
 
 ## Installing
