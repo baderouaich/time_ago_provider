@@ -72,3 +72,6 @@
 
 ## 3.1.0
 - Fixup formatting in certain cases by @l7ssha
+
+## 3.2.0
+- Added Italian Language by @TommasoAzz

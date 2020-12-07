@@ -29,12 +29,15 @@ void main() {
     expect(result, '2 years, 8 months, 28 days, 19 hours, 12 minutes');
   });
 
-  test('Default local format with full message with duration less than 1 second', () async {
+  test(
+      'Default local format with full message with duration less than 1 second',
+      () async {
     final clock = now.add(Duration(milliseconds: 5, microseconds: 600));
     final result = time_ago.formatFull(now, clock: clock);
     expect(result, '1 second');
   });
 
+  ///--- Languages Tests ---///
   group('Italian language test', () {
     test('Seconds test', () {
       final clockAddSecond = now.add(Duration(milliseconds: 500));
@@ -44,7 +47,8 @@ void main() {
         locale: 'it',
         clock: clockAddSecond,
       );
-      final result2 = time_ago.format(now, locale: 'it', clock: clockAddSeconds);
+      final result2 =
+          time_ago.format(now, locale: 'it', clock: clockAddSeconds);
 
       expect(result1, '1 secondo');
       expect(result2, 'un momento fa');
@@ -59,7 +63,8 @@ void main() {
         clock: clockAddMinute,
         enableFromNow: true,
       );
-      final result2 = time_ago.formatFull(now, locale: 'it', clock: clockAddMinutes);
+      final result2 =
+          time_ago.formatFull(now, locale: 'it', clock: clockAddMinutes);
 
       expect(result1, 'un minuto fa');
       expect(result2, '5 minuti');
@@ -87,7 +92,8 @@ void main() {
         locale: 'it',
         clock: clockAddDay,
       );
-      final result2 = time_ago.formatFull(now, locale: 'it', clock: clockAddDays);
+      final result2 =
+          time_ago.formatFull(now, locale: 'it', clock: clockAddDays);
 
       expect(result1, 'un giorno fa');
       expect(result2, '5 giorni');
@@ -102,7 +108,8 @@ void main() {
         clock: clockAddMonth,
         enableFromNow: true,
       );
-      final result2 = time_ago.formatFull(now, locale: 'it', clock: clockAddMonths);
+      final result2 =
+          time_ago.formatFull(now, locale: 'it', clock: clockAddMonths);
 
       expect(result1, 'circa un mese fa');
       expect(result2, '3 mesi');

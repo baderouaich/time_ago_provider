@@ -7,7 +7,8 @@ class Italian implements Language {
   Italian({this.shortForm = false});
 
   @override
-  String seconds(int seconds) => shortForm ? '$seconds sec' : '$seconds secondi';
+  String seconds(int seconds) =>
+      shortForm ? '$seconds sec' : '$seconds secondi';
   @override
   String aboutASecond(int seconds) => shortForm ? '1 sec' : '1 secondo';
   @override
