@@ -17,7 +17,7 @@ import 'languages/turkish.dart';
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
 String format(DateTime date,
-    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
+    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
@@ -70,12 +70,11 @@ String format(DateTime date,
 }
 
 String formatFull(DateTime date,
-    {String locale = 'en', DateTime clock, bool enableFromNow = false}) {
+    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
-  final duration = clock.difference(date);
-  final buffer = StringBuffer();
 
+  final duration = clock.difference(date);
   final seconds = duration.inSeconds % 60;
 
   if (duration.inSeconds < 1) {
@@ -89,51 +88,33 @@ String formatFull(DateTime date,
   final months = _months % 12;
   final years = (_months / 12).floor();
 
+  final stringParts = <String>[];
+
   if (years > 0) {
-    buffer.write(language.years(years));
+    stringParts.add(language.years(years));
   }
 
   if (months > 0) {
-    if (years > 0) {
-      buffer.write(', ');
-    }
-
-    buffer.write(language.months(months));
+    stringParts.add(language.months(months));
   }
 
   if (days > 0) {
-    if (months > 0 || years > 0) {
-      buffer.write(', ');
-    }
-
-    buffer.write(language.days(days));
+    stringParts.add(language.days(days));
   }
 
   if (hours > 0) {
-    if (days > 0 || months > 0 || years > 0) {
-      buffer.write(', ');
-    }
-
-    buffer.write(language.hours(hours));
+    stringParts.add(language.hours(hours));
   }
 
   if (minutes > 0) {
-    if (hours > 0 || days > 0 || months > 0 || years > 0) {
-      buffer.write(', ');
-    }
-
-    buffer.write(language.minutes(minutes));
+    stringParts.add(language.minutes(minutes));
   }
 
   if (seconds > 0) {
-    if (minutes > 0 || hours > 0 || days > 0 || months > 0 || years > 0) {
-      buffer.write(', ');
-    }
-
-    buffer.write(language.seconds(seconds));
+    stringParts.add(language.seconds(seconds));
   }
 
-  return buffer.toString();
+  return stringParts.join(', ');
 }
 
 /// Locales/Languages Map, add desired locales by calling
