@@ -1,3 +1,7 @@
+## 4.1.0
+- Added Swedish & Norwegian Languages by @andreasusego
+- Fix example typo in README.md
+
 ## 4.0.0
 Breaking changes: This version requires Dart SDK 2.12.x
 

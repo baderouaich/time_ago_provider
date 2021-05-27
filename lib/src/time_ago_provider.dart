@@ -13,9 +13,9 @@ import 'languages/swedish.dart';
 import 'languages/turkish.dart';
 
 /// Formats provided [date] to a fuzzy time like '9 minutes ago'
-/// - If [locale] is passed will look for message for that locale, if you want
+/// - If [locale] is passed will, look for message for that locale, if you want
 ///   to add or override locales use [setLocale]. Defaults to 'en'
-/// - If [clock] is passed this will be the point of reference for calculating
+/// - If [clock] is passed, this will be the point of reference for calculating
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
@@ -72,6 +72,13 @@ String format(DateTime date,
   return [pfx, res, sfx].where((s) => s.isNotEmpty).join(language.delimiter());
 }
 
+/// Formats provided [date] to a full fuzzy time like '2 years, 9 months, 9 days, 6 hours, 8 minutes, 3 seconds'
+/// - If [locale] is passed, will look for message for that locale, if you want
+///   to add or override locales use [setLocale]. Defaults to 'en'
+/// - If [clock] is passed, this will be the point of reference for calculating
+///   the delta time. Defaults to DateTime.now()
+/// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
+///   9 minutes from now in 'en' locale will display as "9 minutes from now"
 String formatFull(DateTime date,
     {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
   final language = _languages[locale] ?? English();
