@@ -14,11 +14,11 @@ class Swedish implements Language {
   @override
   String prefixAgo() => '';
   @override
-  String prefixFromNow() => '';
+  String prefixFromNow() => 'om';
   @override
   String suffixAgo() => shortForm ? '' : 'sen';
   @override
-  String suffixFromNow() => shortForm ? '' : 'från nu';
+  String suffixFromNow() => shortForm ? '' : '';
   @override
   String lessThanOneMinute(int seconds) =>
       shortForm ? 'nu' : 'mindre än 1 minut';

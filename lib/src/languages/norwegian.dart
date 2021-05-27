@@ -14,7 +14,7 @@ class Norwegian implements Language {
   @override
   String prefixAgo() => '';
   @override
-  String prefixFromNow() => '';
+  String prefixFromNow() => 'om';
   @override
   String suffixAgo() => shortForm ? '' : 'siden';
   @override
