@@ -1,12 +1,15 @@
 import 'package:time_ago_provider/time_ago_provider.dart';
 
-import 'languages/language.dart';
+import 'languages/arabic.dart';
 import 'languages/english.dart';
+import 'languages/french.dart';
 import 'languages/german.dart';
 import 'languages/italian.dart';
+import 'languages/language.dart';
+import 'languages/norwegian.dart';
 import 'languages/polish.dart';
-import 'languages/arabic.dart';
-import 'languages/french.dart';
+import 'languages/portuguese.dart';
+import 'languages/swedish.dart';
 import 'languages/turkish.dart';
 
 /// Formats provided [date] to a fuzzy time like '9 minutes ago'
@@ -139,7 +142,11 @@ Map<String, Language> _languages = {
   'tr': Turkish(),
   'tr_short': Turkish(shortForm: true),
   'pr': Portuguese(),
-  'pr_short': Portuguese(shortForm: true)
+  'pr_short': Portuguese(shortForm: true),
+  'sv': Swedish(),
+  'sv_short': Swedish(shortForm: true),
+  'nb': Norwegian(),
+  'nb_short': Norwegian(shortForm: true)
 };
 
 /// Sets a [locale] with the provided [Language] to be available when
