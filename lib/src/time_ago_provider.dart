@@ -143,8 +143,8 @@ Map<String, Language> _languages = {
   'tr_short': Turkish(shortForm: true),
   'pr': Portuguese(),
   'pr_short': Portuguese(shortForm: true),
-  'se': Swedish(),
-  'se_short': Swedish(shortForm: true),
+  'sv': Swedish(),
+  'sv_short': Swedish(shortForm: true),
   'nb': Norwegian(),
   'nb_short': Norwegian(shortForm: true)
 };
