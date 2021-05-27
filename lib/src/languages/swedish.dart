@@ -16,18 +16,18 @@ class Swedish implements Language {
   @override
   String prefixFromNow() => '';
   @override
-  String suffixAgo() => shortForm ? '' : 'sen';
+  String suffixAgo() => shortForm ? '' : '';
   @override
   String suffixFromNow() => shortForm ? '' : 'från nu';
   @override
-  String lessThanOneMinute(int seconds) => shortForm ? 'nu' : 'precis';
+  String lessThanOneMinute(int seconds) => shortForm ? 'nu' : 'nyss';
   @override
-  String aboutAMinute(int minutes) => shortForm ? '1 min' : 'en minut';
+  String aboutAMinute(int minutes) => shortForm ? '1 min' : 'för en minut sen';
   @override
   String minutes(int minutes) =>
       shortForm ? '$minutes min' : '$minutes minuter';
   @override
-  String aboutAnHour(int minutes) => shortForm ? '~1 tim' : 'ungefär en timme';
+  String aboutAnHour(int minutes) => shortForm ? '~1 tim' : 'för en timme sen';
   @override
   String hours(int hours) => shortForm ? '$hours tim' : '$hours timmar';
   @override
@@ -35,11 +35,11 @@ class Swedish implements Language {
   @override
   String days(int days) => shortForm ? '$days d' : '$days dagar';
   @override
-  String aboutAMonth(int days) => shortForm ? '~1 mån' : 'ungefär en månad';
+  String aboutAMonth(int days) => shortForm ? '~1 mån' : 'för en månad sen';
   @override
   String months(int months) => shortForm ? '$months mån' : '$months månader';
   @override
-  String aboutAYear(int year) => shortForm ? '~1 år' : 'ungefär ett år';
+  String aboutAYear(int year) => shortForm ? '~1 år' : 'för ett år sen';
   @override
   String years(int years) => shortForm ? '$years år' : '$years år';
   @override

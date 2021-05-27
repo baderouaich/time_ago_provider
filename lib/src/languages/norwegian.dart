@@ -20,14 +20,14 @@ class Norwegian implements Language {
   @override
   String suffixFromNow() => shortForm ? '' : 'fra nå';
   @override
-  String lessThanOneMinute(int seconds) => shortForm ? 'nå' : 'akkurat nå';
+  String lessThanOneMinute(int seconds) => shortForm ? 'nå' : 'for litt';
   @override
   String aboutAMinute(int minutes) => shortForm ? '1 min' : 'ett minutt';
   @override
   String minutes(int minutes) =>
       shortForm ? '$minutes min' : '$minutes minutter';
   @override
-  String aboutAnHour(int minutes) => shortForm ? '~1 tim' : 'for en time siden';
+  String aboutAnHour(int minutes) => shortForm ? '~1 tim' : 'for en time';
   @override
   String hours(int hours) => shortForm ? '$hours tim' : '$hours timer';
   @override
