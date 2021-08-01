@@ -30,7 +30,7 @@ class Persian implements Language {
   @override
   String hours(int hours) => shortForm ? '$hours س' : '$hours ساعت';
   @override
-  String aDay(int hours) => shortForm ? '~1 روز' : 'یک روز';
+  String aDay(int hours) => shortForm ? '1 روز' : 'یک روز';
   @override
   String days(int days) => shortForm ? '$days ر' : '$days روز';
   @override
