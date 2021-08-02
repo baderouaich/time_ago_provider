@@ -34,6 +34,7 @@ void main() {
 - [x] ITALIAN
 - [x] SWEDISH
 - [x] NORWEGIAN
+- [x] PERSIAN
 - More will be added
 
 ## Installing
@@ -76,6 +77,11 @@ Thanks goes to these wonderful people!<br>
   <tr>
     <a href="https://github.com/andreasusego">
       <img width="50" height="50" src="https://github.com/andreasusego.png">
+    </a>
+  </tr>
+  <tr>
+    <a href="https://github.com/tavanarad">
+      <img width="50" height="50" src="https://github.com/tavanarad.png">
     </a>
   </tr>
 </table>
