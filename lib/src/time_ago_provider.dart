@@ -7,6 +7,7 @@ import 'languages/german.dart';
 import 'languages/italian.dart';
 import 'languages/language.dart';
 import 'languages/norwegian.dart';
+import 'languages/persian.dart';
 import 'languages/polish.dart';
 import 'languages/portuguese.dart';
 import 'languages/swedish.dart';
@@ -142,6 +143,8 @@ Map<String, Language> _languages = {
   'it_short': Italian(shortForm: true),
   'pl': Polish(),
   'pl_short': Polish(shortForm: true),
+  'fa': Persian(),
+  'fa_short': Persian(shortForm: true),
   'fr': French(),
   'fr_short': French(shortForm: true),
   'ar': Arabic(),
