@@ -35,6 +35,7 @@ void main() {
 - [x] SWEDISH
 - [x] NORWEGIAN
 - [x] PERSIAN
+- [x] SPANISH
 - More will be added
 
 ## Installing
