@@ -12,6 +12,7 @@ import 'languages/polish.dart';
 import 'languages/portuguese.dart';
 import 'languages/swedish.dart';
 import 'languages/turkish.dart';
+import 'languages/spanish.dart';
 
 /// Formats provided [date] to a fuzzy time like '9 minutes ago'
 /// - If [locale] is passed will, look for message for that locale, if you want
@@ -156,7 +157,9 @@ Map<String, Language> _languages = {
   'sv': Swedish(),
   'sv_short': Swedish(shortForm: true),
   'nb': Norwegian(),
-  'nb_short': Norwegian(shortForm: true)
+  'nb_short': Norwegian(shortForm: true),
+  'es': Spanish(),
+  'es_short': Spanish(shortForm:true)
 };
 
 /// Sets a [locale] with the provided [Language] to be available when
