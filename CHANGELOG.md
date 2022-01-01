@@ -4,6 +4,10 @@ on new translation added: increment patch
 on bug fixed or new api supported: increment minor and reset patch
 on breaking change occured: increment major and reset minor and patch
 -->
+
+## 4.1.2
+- Added Spanish Language by @baldomerocho
+
 ## 4.1.1
 - Added Persian Language by @tavanarad
 

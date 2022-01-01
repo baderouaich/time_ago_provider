@@ -159,7 +159,7 @@ Map<String, Language> _languages = {
   'nb': Norwegian(),
   'nb_short': Norwegian(shortForm: true),
   'es': Spanish(),
-  'es_short': Spanish(shortForm:true)
+  'es_short': Spanish(shortForm: true)
 };
 
 /// Sets a [locale] with the provided [Language] to be available when

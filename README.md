@@ -85,6 +85,11 @@ Thanks goes to these wonderful people!<br>
       <img width="50" height="50" src="https://github.com/tavanarad.png">
     </a>
   </tr>
+  <tr>
+    <a href="https://github.com/baldomerocho">
+      <img width="50" height="50" src="https://github.com/baldomerocho.png">
+    </a>
+  </tr>
 </table>
 
 
