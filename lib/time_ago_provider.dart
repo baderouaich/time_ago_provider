@@ -10,4 +10,5 @@ export 'src/languages/polish.dart';
 export 'src/languages/portuguese.dart';
 export 'src/languages/swedish.dart';
 export 'src/languages/turkish.dart';
+export 'src/languages/spanish.dart';
 export 'src/time_ago_provider.dart';
