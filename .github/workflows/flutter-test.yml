@@ -20,18 +20,17 @@ jobs:
       with:
         channel: 'stable'
 
-    # Get flutter dependencies.
-    - run: flutter pub get
+    - name: Install Dependencies
+      run: flutter packages get
 
-    # Check for any formatting issues in the code.
-    - run: flutter format --set-exit-if-changed .
+    - name: Check for any formatting issues in the code.
+      run: flutter format --set-exit-if-changed lib test example
 
-    # Statically analyze the Dart code for any errors.
-    - run: flutter analyze .
+    - name: Statically analyze the Dart code for any errors.
+      run: flutter analyze lib test example
 
-    # Do the same for examples
-    - run: flutter analyze .
-      working-directory: ./example
+    - name: Run tests
+      run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
 
-    # Run widget tests for our flutter project.
-    - run: flutter test
+    - name: Generate Code Coverage
+      run: flutter pub run flutter_coverage_badge
