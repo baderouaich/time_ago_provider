@@ -1,5 +1,9 @@
-## time_ago_provider
+# time_ago_provider
+
 library for generating fuzzy timestamp e.g("9 minutes ago")
+
+[![pub package](https://img.shields.io/pub/v/time_ago_provider.svg)](https://pub.dev/packages/time_ago_provider)
+[![Github test](https://github.com/BaderEddineOuaich/time_ago_provider/workflows/test/badge.svg)](https://github.com/BaderEddineOuaich/time_ago_provider/actions?query=workflow%3Atest)
 
 ```dart
 import 'package:time_ago_provider/time_ago_provider.dart' as timeAgo;
@@ -24,6 +28,7 @@ void main() {
 ```
 
 ## Supported Languages
+
 - [x] ENGLISH
 - [x] GERMAN
 - [x] POLISH
@@ -39,10 +44,11 @@ void main() {
 - More will be added
 
 ## Installing
+
 [Package](https://pub.dartlang.org/packages/time_ago_provider)
 
-
 ## Contributors ✨
+
 Thanks goes to these wonderful people!<br>
 <table>
   <tr>
@@ -90,11 +96,15 @@ Thanks goes to these wonderful people!<br>
       <img width="50" height="50" src="https://github.com/baldomerocho.png">
     </a>
   </tr>
+  <tr>
+    <a href="https://github.com/andgar2010">
+      <img width="50" height="50" src="https://github.com/andgar2010.png">
+    </a>
+  </tr>
 </table>
 
-
 ## Features and bugs
+
 If you face any problems feel free to open an issue at the [issue tracker][tracker]. If you feel the library is missing a feature, please raise a ticket on Github. Pull request are also welcome.
 
 [tracker]: https://github.com/BaderEddineOuaich/time_ago_provider/issues
-
