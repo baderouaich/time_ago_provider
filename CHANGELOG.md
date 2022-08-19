@@ -2,8 +2,10 @@
 Versioning Methodology:
 on new translation added: increment patch
 on bug fixed or new api supported: increment minor and reset patch
-on breaking change occured: increment major and reset minor and patch
+on breaking change occurred: increment major and reset minor and patch
 -->
+## 4.2.0
+- Improvement structure test by @andgar2010
 
 ## 4.1.2
 - Added Spanish Language by @baldomerocho
