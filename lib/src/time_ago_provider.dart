@@ -1,18 +1,4 @@
-import 'package:time_ago_provider/time_ago_provider.dart';
-
-import 'languages/arabic.dart';
-import 'languages/english.dart';
-import 'languages/french.dart';
-import 'languages/german.dart';
-import 'languages/italian.dart';
-import 'languages/language.dart';
-import 'languages/norwegian.dart';
-import 'languages/persian.dart';
-import 'languages/polish.dart';
-import 'languages/portuguese.dart';
-import 'languages/swedish.dart';
-import 'languages/turkish.dart';
-import 'languages/spanish.dart';
+import 'languages/languages.dart';
 
 /// Formats provided [date] to a fuzzy time like '9 minutes ago'
 /// - If [locale] is passed will, look for message for that locale, if you want
@@ -21,8 +7,12 @@ import 'languages/spanish.dart';
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String format(DateTime date,
-    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String format(
+  DateTime date, {
+  String locale = 'en',
+  DateTime? clock,
+  bool enableFromNow = false,
+}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
@@ -81,24 +71,28 @@ String format(DateTime date,
 ///   the delta time. Defaults to DateTime.now()
 /// - If [enableFromNow] is passed, format will use the From prefix, ie. a date
 ///   9 minutes from now in 'en' locale will display as "9 minutes from now"
-String formatFull(DateTime date,
-    {String locale = 'en', DateTime? clock, bool enableFromNow = false}) {
+String formatFull(
+  DateTime date, {
+  String locale = 'en',
+  DateTime? clock,
+  bool enableFromNow = false,
+}) {
   final language = _languages[locale] ?? English();
   clock ??= DateTime.now();
 
-  final duration = clock.difference(date);
-  final seconds = duration.inSeconds % 60;
+  final Duration duration = clock.difference(date);
+  final int seconds = duration.inSeconds % 60;
 
   if (duration.inSeconds < 1) {
     return language.aboutASecond(0);
   }
 
-  final minutes = duration.inMinutes % 60;
-  final hours = duration.inHours % 24;
-  final days = duration.inDays % 30;
-  final _months = (duration.inDays / 30).floor();
-  final months = _months % 12;
-  final years = (_months / 12).floor();
+  final int minutes = duration.inMinutes % 60;
+  final int hours = duration.inHours % 24;
+  final int days = duration.inDays % 30;
+  final int monthsAll = (duration.inDays / 30).floor();
+  final int months = monthsAll % 12;
+  final int years = (monthsAll / 12).floor();
 
   final stringParts = <String>[];
 

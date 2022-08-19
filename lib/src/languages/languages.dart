@@ -1,0 +1,13 @@
+export 'arabic.dart';
+export 'english.dart';
+export 'french.dart';
+export 'german.dart';
+export 'italian.dart';
+export 'language.dart';
+export 'norwegian.dart';
+export 'persian.dart';
+export 'polish.dart';
+export 'portuguese.dart';
+export 'spanish.dart';
+export 'swedish.dart';
+export 'turkish.dart';
