@@ -1,11 +1,11 @@
 name: time_ago_provider
 description: library for generating fuzzy timestamp for example ("9 minutes ago")
-version: 4.1.2
+version: 4.2.0
 homepage: https://github.com/BaderEddineOuaich/time_ago_provider
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
 
 dev_dependencies:
-  pedantic: "^1.11.0"
-  test: "^1.16.8"
+  flutter_lints: ^2.0.1
+  test: ^1.21.4
