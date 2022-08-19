@@ -29,36 +29,36 @@ String format(
     sfx = language.suffixAgo();
   }
 
-  final num SECONDS = deltaTime / 1000;
-  final num MINUTES = SECONDS / 60;
-  final num HOURS = MINUTES / 60;
-  final num DAYS = HOURS / 24;
-  final num MONTHS = DAYS / 30;
-  final num YEARS = DAYS / 365;
+  final num seconds = deltaTime / 1000;
+  final num minutes = seconds / 60;
+  final num hours = minutes / 60;
+  final num days = hours / 24;
+  final num months = days / 30;
+  final num years = days / 365;
 
   String res;
-  if (SECONDS < 45) {
-    res = language.lessThanOneMinute(SECONDS.round());
-  } else if (SECONDS < 90) {
-    res = language.aboutAMinute(MINUTES.round());
-  } else if (MINUTES < 45) {
-    res = language.minutes(MINUTES.round());
-  } else if (MINUTES < 90) {
-    res = language.aboutAnHour(MINUTES.round());
-  } else if (HOURS < 24) {
-    res = language.hours(HOURS.round());
-  } else if (HOURS < 48) {
-    res = language.aDay(HOURS.round());
-  } else if (DAYS < 30) {
-    res = language.days(DAYS.round());
-  } else if (DAYS < 60) {
-    res = language.aboutAMonth(DAYS.round());
-  } else if (DAYS < 365) {
-    res = language.months(MONTHS.round());
-  } else if (YEARS < 2) {
-    res = language.aboutAYear(MONTHS.round());
+  if (seconds < 45) {
+    res = language.lessThanOneMinute(seconds.round());
+  } else if (seconds < 90) {
+    res = language.aboutAMinute(minutes.round());
+  } else if (minutes < 45) {
+    res = language.minutes(minutes.round());
+  } else if (minutes < 90) {
+    res = language.aboutAnHour(minutes.round());
+  } else if (hours < 24) {
+    res = language.hours(hours.round());
+  } else if (hours < 48) {
+    res = language.aDay(hours.round());
+  } else if (days < 30) {
+    res = language.days(days.round());
+  } else if (days < 60) {
+    res = language.aboutAMonth(days.round());
+  } else if (days < 365) {
+    res = language.months(months.round());
+  } else if (years < 2) {
+    res = language.aboutAYear(months.round());
   } else {
-    res = language.years(YEARS.round());
+    res = language.years(years.round());
   }
 
   return [pfx, res, sfx].where((s) => s.isNotEmpty).join(language.delimiter());
