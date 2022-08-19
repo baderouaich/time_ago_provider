@@ -1,0 +1,36 @@
+name: test
+on:
+  push:
+  pull_request:
+    branches:
+    - main
+  schedule:
+  # Run the quality job at 4am every day
+  - cron: '0 4 * * *'
+
+jobs:
+  test:
+    # This job will run on ubuntu virtual machine
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    # Setup the flutter environment.
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: 'stable'
+
+    - name: Install Dependencies
+      run: flutter packages get
+
+    - name: Check for any formatting issues in the code.
+      run: flutter format --set-exit-if-changed lib test example
+
+    - name: Statically analyze the Dart code for any errors.
+      run: flutter analyze lib test example
+
+    - name: Run tests
+      run: flutter test --no-pub --coverage --test-randomize-ordering-seed random
+
+    - name: Generate Code Coverage
+      run: flutter pub run flutter_coverage_badge

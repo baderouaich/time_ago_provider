@@ -1,14 +1,17 @@
+// ignore_for_file: avoid_print
+
 import 'package:time_ago_provider/time_ago_provider.dart' as time_ago;
 
 void main() {
   /// Default Format (summary of elapsed time)
-  final nineMinutesElapsed = DateTime.now().subtract(Duration(minutes: 9));
+  final nineMinutesElapsed =
+      DateTime.now().subtract(const Duration(minutes: 9));
   print(time_ago.format(nineMinutesElapsed)); // 9 minutes ago
   print(time_ago.format(nineMinutesElapsed, locale: 'en_short')); // 9 min
 
   /// Full Format (detailed elapsed time years, months, days...)
   final longTimeElapsed = DateTime.now()
-      .subtract(Duration(days: 999, hours: 6, minutes: 8, seconds: 3));
+      .subtract(const Duration(days: 999, hours: 6, minutes: 8, seconds: 3));
   print(time_ago.formatFull(
       longTimeElapsed)); // 2 years, 9 months, 9 days, 6 hours, 8 minutes, 3 seconds
   print(time_ago.formatFull(longTimeElapsed,
